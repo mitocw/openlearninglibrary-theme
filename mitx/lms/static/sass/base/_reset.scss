@@ -1,0 +1,29 @@
+html,
+body {
+	font-family: $font-family-sans-serif;
+}
+
+body {
+	color: $charcoal-gray;
+    background: $body-bg;
+}
+
+#main,
+.container {
+    @include margin-left(auto);
+    @include margin-right(auto);
+    @include padding-left( ($baseline*0.75) );
+    @include padding-right( ($baseline*0.75) );
+    max-width: $container-default;
+}
+
+.find-courses, .university-profile {
+    background: $body-bg;
+}
+
+.content-wrapper {
+
+	.container {
+		@include padding($baseline*3, 0, $baseline*5, 0);
+	}
+}

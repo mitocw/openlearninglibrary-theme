@@ -1,0 +1,67 @@
+// ------------------------------
+// About: Additional sass rules that must come at the end of the compilation for overriding purposes - either for temporary/specific developer styling needs or for known poorly scoped/written styling
+//
+
+// #TEMP
+// #DEVELOPERS
+// #SHAME
+
+// ------------------------------
+// #TEMP
+// ------------------------------
+.course-info {
+
+    .details {
+
+        h1, h2, h3, h4, h5, h6,
+        p, span, a {
+            font-family: $font-family-sans-serif;
+        }
+    }
+}
+
+[class^='wrapper'] {
+
+    .view-dashboard & {
+        width: auto;
+    }
+
+    &:after {
+        .view-dashboard & {
+            content: none;
+        }
+    }
+}
+
+.dashboard {
+
+    .side-container {
+        min-width: 500px;
+        max-width: 500px;
+
+        .sidebar-notification {
+
+            .profile-sidebar {
+
+                .user-info {
+
+                    .status-note {
+
+                        strong {
+                            word-break:  break-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------
+// #DEVELOPERS
+// ------------------------------
+
+
+// ------------------------------
+// #SHAME
+// ------------------------------
