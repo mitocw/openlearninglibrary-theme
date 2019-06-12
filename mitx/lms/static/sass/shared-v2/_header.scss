@@ -1,0 +1,148 @@
+.global-header {
+    box-shadow: none;
+    border-bottom-color: $light-blue-gray;
+    @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
+
+    .nav-links {
+        @include padding($baseline*0.75, 0, $baseline*0.75, 0);
+
+        .main {
+            @include margin(0, 0, 0, $baseline);
+
+            .nav-item {
+
+                &.nav-tab {
+                    font-size: 18px;
+
+                    &.actice {
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        .secondary {
+            margin: 0;
+
+            .nav-item {
+                padding: 0;
+                vertical-align: middle;
+
+                &.custom-nav {
+                    padding: 0;
+                    list-style: none;
+                    font-size: 0; //to remove white space between inline HTML elements, and child must have font-size
+                    @include margin-right($baseline*0.8);
+                    @include media-up(md) {
+                        display: inline-block;
+                    }
+
+                    li {
+                        display: inline-block;
+                        margin: 0;
+                        @include padding($baseline*0.25, $baseline*1.1, $baseline*0.25, $baseline*1.1);
+
+                        a {
+                            font-size: $baseline;
+                            text-decoration: none;
+                            @include padding($baseline*0.5, 0, $baseline*0.5, 0);
+
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    @include margin-right(-1px);
+                    @include margin-left($baseline*.25);
+                }
+            }
+
+            a {
+
+                &.sign-in-btn,
+                &.register-btn {
+                    font-size: 14px;
+                    font-family: $font-roboto;
+                    font-weight: 500;
+                    @include padding($baseline*0.45, $baseline, $baseline*0.4, $baseline);
+                    text-align: center;
+                }
+
+                &.sign-in-btn {
+                    background-color: $white;
+                    border-color: $primary;
+                    color: $primary;
+                    min-width: $baseline*7;
+                    border-radius: $border-radius;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+                &.register-btn {
+                    background-color: $primary;
+                    border-color: $primary;
+                    color: $white;
+                    min-width: $baseline*10;
+                    border-radius: $border-radius;
+
+                    &:hover {
+                        background-color: $white;
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-header {
+    @include clearfix;
+    @include padding(0, ($baseline*0.75), 0, ($baseline*0.75));
+    margin: auto;
+    max-width: $container-default;
+    @include media-up(sm) {
+        display: table;
+        width: 100%;
+    }
+
+    > *:not(.hamburger-menu) {
+        @include media-up(sm) {
+            display: table-cell !important;
+            vertical-align: middle;
+        }
+    }
+
+    .header-logo {
+        @include media-up(sm) {
+            display: table;
+        }
+
+        > * {
+            @include media-up(sm) {
+                display: table-cell !important;
+                float: none !important;
+                vertical-align: middle;
+            }
+        }
+
+        a {
+            margin: 0;
+
+            .logo {
+                height: ($baseline*2.45);
+            }
+        }
+
+        .course-header {
+            margin: 0;
+            @include text-align(left);
+            @include padding-left($baseline);
+        }
+    }
+}

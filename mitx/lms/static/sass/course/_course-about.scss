@@ -1,0 +1,96 @@
+.content-wrapper {
+    margin: 0;
+    padding: 0;
+
+    .course-info {
+
+        header {
+
+            &.course-profile {
+                color: $white;
+                background: $navy-50;
+                box-shadow: none;
+                height: auto;
+                padding: 0;
+
+                .intro-inner-wrapper {
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    max-width: $container-default;
+                    @include padding($baseline*3, $baseline*0.75, $baseline*3, $baseline*0.75);
+
+                    .intro {
+                        vertical-align: bottom;
+                        @include padding(0, $baseline, 0, 0);
+                        @include media-up(md) {
+                            width: 58.3333333333%;
+                        }
+
+                        .heading-group {
+                            border: none;
+                            box-shadow: none;
+                            padding: 0;
+                            margin: 0;
+
+
+                            .course-num {
+                                display: block;
+                                font-size: 25px;
+                                line-height: 1.12;
+                                letter-spacing: 0.8px;
+                                @include margin(0, 0, $baseline*0.25, 0);
+                            }
+
+                            h1 {
+                                color: $white;
+                                text-shadow: none;
+                                font-size: 45px;
+                                line-height: 1.1;
+                                @include margin(0, 0, $baseline*1.5, 0);
+                                @include media-up(md) {
+                                    max-width: 75%;
+                                }
+                            }
+                        }
+
+                        .main-cta {
+
+                            a.register {
+                                @extend %btn;
+                                @include padding($baseline*0.6, $baseline, $baseline*0.55, $baseline);
+                                background: $primary;
+                                border-color: $primary;
+                                box-shadow: none;
+                                text-shadow: none;
+                                width: $baseline*13;
+                                border-radius: $border-radius;
+
+                                &:hover {
+                                    background: darken($primary, 5%);
+                                    border-color: darken($primary, 5%);
+                                }
+
+                                &:active,
+                                &:focus {
+                                    box-shadow: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .media {
+                        @include padding(0, 0, 0, $baseline);
+                        @include media-up(md) {
+                            width: 41.6666666667%;
+                        }
+
+                        .hero {
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

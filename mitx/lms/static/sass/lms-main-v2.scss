@@ -1,0 +1,40 @@
+// ------------------------------
+// LMS main styling
+// Version 2 - introduces the Pattern Library
+
+// NOTE: This is the left-to-right (LTR) configured style compile.
+// It should mirror lms-main-v2-rtl w/ the exception of bi-app references.
+
+
+// Load the RTL version of the edX Pattern Library
+$pattern-library-path: '../../edx-pattern-library' !default;
+
+@import 'edx-pattern-library/pattern-library/sass/edx-pattern-library-ltr';
+
+// Load the shared build
+@import 'build-lms-v2';
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+
+// Additional sass rules that must come at the end of the compilation for overriding purposes
+@import 'overrides';
+
+// ------------------------------
+// THEME SASS FILES
+// ------------------------------
+// base - utilities
+@import 'base/mixins-breakpoints';
+@import 'base/typography';
+@import 'base/reset';
+
+// Components / Shared-v2
+@import 'shared-v2/header';
+@import 'shared-v2/footer';
+
+// Elements
+@import 'elements-v2/buttons';
+
+// Course
+@import 'course/course-about';
+@import 'course/course-details';
+@import 'course/course-sidebar';
