@@ -5,9 +5,11 @@ $upgrade-color: $primary !default;
 $upgrade-dark-color: darken($upgrade-color, 10%) !default;
 
 .btn {
+    box-shadow: none;
     font-family: $font-roboto !important;
     font-weight: 500 !important;
     letter-spacing: 0.5px !important;
+    text-shadow: none;
 }
 
 .btn-primary {
