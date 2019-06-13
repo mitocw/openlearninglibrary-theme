@@ -2,20 +2,32 @@
     box-shadow: none;
     border-bottom-color: $light-blue-gray;
     @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
+    @include media-up(sm) {
+        overflow: visible;
+    }
 
     .nav-links {
         @include padding($baseline*0.75, 0, $baseline*0.75, 0);
+        @include media-up(sm) {
+            width: 80%;
+        }
+
+        .is-authenticated & {
+            @include padding($baseline*0.65, 0, $baseline*0.65, 0);
+        }
 
         .main {
-            @include margin(0, 0, 0, $baseline);
+            @include margin(0, 0, 0, $baseline*4);
 
             .nav-item {
 
                 &.nav-tab {
-                    font-size: 18px;
+                    font-size: 20px;
+                    @include padding(0, $baseline, 0, $baseline);
 
-                    &.actice {
-                        border: none;
+                    .tab-nav-link {
+                        border-width: 2px;
+                        @include padding($baseline*0.5, 0, $baseline*0.5, 0);
                     }
                 }
             }
@@ -27,6 +39,78 @@
             .nav-item {
                 padding: 0;
                 vertical-align: middle;
+
+                .help-link {
+                    font-size: 20px;
+                    color: $light-gray-blue;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+                &.nav-item-dropdown {
+                    position: relative;
+
+                    .toggle-user-dropdown {
+                        background: $ice-blue-60;
+                        border-radius: $border-radius;
+                        @include padding($baseline*0.25, $baseline*0.7, $baseline*0.25, $baseline*0.7);
+
+                        .username,
+                        .user-image-frame {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        .username {
+                            color: $primary;
+                            font-family: $font-roboto;
+                            font-weight: 500;
+                            @include margin-right($baseline*1.3);
+                        }
+
+                        .user-image-frame {
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin: 0;
+                            width: 30px;
+                            height: 30px;
+                            border: none;
+
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+
+                    .dropdown-user-menu {
+                        border: none;
+                        background: $ice-blue-60-solid;
+                        border-radius: $border-radius;
+                        width: 100%;
+                        min-width: 175px;
+                        overflow: hidden;
+                        right: 0;
+                        top: calc(100% + 5px);
+                        box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+                        -webkit-box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+                        -moz-box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+
+                        .dropdown-nav-item {
+
+                            &:hover {
+                                background-color: $ice-blue;
+                            }
+                        }
+                    }
+                }
 
                 &.custom-nav {
                     padding: 0;

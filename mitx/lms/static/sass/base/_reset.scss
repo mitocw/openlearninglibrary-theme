@@ -1,15 +1,20 @@
 html,
 body {
-	font-family: $font-family-sans-serif;
+    font-family: $font-family-sans-serif;
 }
 
 body {
-	color: $charcoal-gray;
+    color: $charcoal-gray;
     background: $body-bg;
 }
 
 #main,
-.container {
+.container,
+.course-tabs,
+body.view-in-course .container,
+body.view-in-course .content-wrapper,
+.wrapper-preview-menu .preview-menu,
+.content-wrapper .page-content-container {
     @include margin-left(auto);
     @include margin-right(auto);
     @include padding-left( ($baseline*0.75) );
@@ -17,13 +22,18 @@ body {
     max-width: $container-default;
 }
 
-.find-courses, .university-profile {
-    background: $body-bg;
-}
-
 .content-wrapper {
 
-	.container {
-		@include padding($baseline*3, 0, $baseline*5, 0);
-	}
+    .container {
+        @include padding($baseline*3, 0, $baseline*5, 0);
+    }
+}
+
+.course-info .container .wrap-instructor-info.studio-view {
+    @include clearfix;
+    @include margin(0, 0, $baseline*0.5, 0);
+}
+
+.find-courses, .university-profile {
+    background: $body-bg;
 }

@@ -2,7 +2,13 @@
     box-shadow: none;
     background: $navy;
     color: $white;
+    font-family: $font-source-sans-pro;
     @include padding($baseline*2, 0, 0, 0);
+
+    .view-in-course & {
+        @include padding-left(0);
+        @include padding-right(0);
+    }
 
     footer {
 
@@ -46,6 +52,7 @@
             					line-height: 1.56;
             					letter-spacing: 0.5px;
             					border-bottom: 1px solid $white;
+                                font-family: $font-source-sans-pro;
             				}
 
             				&:last-child {
@@ -62,6 +69,7 @@
         	@include padding($baseline, 0, $baseline, 0);
 
         	.container {
+                @include clearfix;
         		@include padding(0, $baseline*0.75, 0, $baseline*0.75);
         	}
 
@@ -95,6 +103,7 @@
         	}
 
         	.copyright {
+                color: $white;
         		font-size: 13px;
         		letter-spacing: 0.8px;
         		margin: 0;
