@@ -1,11 +1,29 @@
 html,
 body {
+    height: 100%;
     font-family: $font-family-sans-serif;
+
+    // Sticky footer rules
+    .window-wrap {
+        display: flex;
+        height: 100%;
+        min-height: 100%;
+        flex-direction: column;
+
+        .content-wrapper {
+            flex: 1;
+        }
+    }
+}
+
+html {
+    overflow: auto !important;
 }
 
 body {
-    color: $charcoal-gray;
     background: $body-bg;
+    color: $charcoal-gray;
+    overflow: initial !important;
 }
 
 #main,
@@ -20,6 +38,11 @@ body.view-in-course .content-wrapper,
     @include padding-left( ($baseline*0.75) );
     @include padding-right( ($baseline*0.75) );
     max-width: $container-default;
+}
+
+#main {
+    position: relative;
+    z-index: 2;
 }
 
 .content-wrapper {
