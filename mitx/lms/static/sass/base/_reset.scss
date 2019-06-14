@@ -1,11 +1,28 @@
-html,
-body {
-    font-family: $font-family-sans-serif;
+html {
+    height: auto;
+    min-height: 100%;
+    max-height: inherit;
+    position: relative;
+    overflow: auto !important;
 }
 
 body {
-    color: $charcoal-gray;
     background: $body-bg;
+    color: $charcoal-gray;
+    overflow: initial !important;
+    font-family: $font-family-sans-serif;
+}
+
+// Sticky footer rules
+.window-wrap {
+    display: flex;
+    height: 100%;
+    min-height: 100%;
+    flex-direction: column;
+
+    .content-wrapper {
+        flex: 1;
+    }
 }
 
 #main,
@@ -22,10 +39,15 @@ body.view-in-course .content-wrapper,
     max-width: $container-default;
 }
 
+#main {
+    position: relative;
+    z-index: 2;
+}
+
 .content-wrapper {
 
     .container {
-        @include padding($baseline*3, 0, $baseline*5, 0);
+        @include padding($baseline*3, $baseline*0.75, $baseline*5, $baseline*0.75);
     }
 }
 

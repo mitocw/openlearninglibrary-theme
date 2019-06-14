@@ -1,6 +1,8 @@
 <%page expression_filter="h" />
 <%namespace name='static' file='../static_content.html'/>
 <%!
+import math
+from datetime import datetime, timedelta
 from django.utils.translation import ugettext as _
 from django.utils.translation import pgettext
 from django.urls import reverse
@@ -254,13 +256,27 @@ from six import string_types
               % endif
             </li>
           % endif
-            ## We plan to ditch end_date (which is not stored in course metadata),
-            ## but for backwards compatibility, show about/end_date blob if it exists.
-            % if course.end:
-                <%
-                    course_end_date = course.end
-                %>
 
+          % if not course.start_date_is_still_default:
+              <%
+                  course_start_date = course.advertised_start or course.start
+              %>
+            <li class="important-dates-item">
+              <span class="icon fa fa-calendar" aria-hidden="true"></span>
+              <p class="important-dates-item-title">${_("Year Created:")}</p>
+                  <%
+                    course_date_string = course_start_date.strftime('%Y')
+                  %>
+                  <span class="important-dates-item-text start-date localized_datetime" data-language="${LANGUAGE_CODE}">${course_date_string}</span>
+            </li>
+          % endif
+
+          ## We plan to ditch end_date (which is not stored in course metadata),
+          ## but for backwards compatibility, show about/end_date blob if it exists.
+          % if course.end:
+              <%
+                  course_end_date = course.end
+              %>
             <li class="important-dates-item">
                 <span class="icon fa fa-calendar" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Classes End:")}</p>
@@ -273,7 +289,32 @@ from six import string_types
                     <span class="important-dates-item-text final-date localized_datetime" data-format="shortDate" data-datetime="${course_date_string}" data-language="${LANGUAGE_CODE}"></span>
                   % endif
             </li>
-            % endif
+          % endif
+
+          % if course.end and not course.start_date_is_still_default:
+            <li class="important-dates-item">
+                <span class="icon fa fa-calendar" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Length")}</p>
+                <%
+                    course_start_date = course.advertised_start or course.start
+                    course_end_date = course.end
+                    old_date = course_start_date.date()
+                    new_date = course_end_date.date()
+                    date_delta = new_date - old_date
+                    course_length = int(math.ceil(date_delta.days/7.0))
+                %>
+                % if course_length > 1:
+                    <%
+                      course_length = str(course_length) + ' Weeks'
+                    %>
+                % else:
+                    <%
+                      course_length = str(course_length) + ' Week'
+                    %>
+                % endif
+                <span class="important-dates-item-text final-date localized_datetime"  data-language="${LANGUAGE_CODE}">${course_length}</span>
+            </li>
+          % endif
 
           % if get_course_about_section(request, course, "effort"):
             <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort:")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>

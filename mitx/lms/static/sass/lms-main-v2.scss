@@ -38,3 +38,7 @@ $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 @import 'course/course-about';
 @import 'course/course-details';
 @import 'course/course-sidebar';
+
+// Views
+@import 'views/account-settings';
+@import 'views/login-register';
