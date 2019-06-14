@@ -28,12 +28,14 @@
 .login-register-content {
     margin: 0;
     background: $body-bg;
+    justify-content: left;
 
     .login-register-view & {
         background: $body-bg;
     }
 
     #login-and-registration-container {
+        @include margin($baseline*6.25, 0, $baseline, $baseline*4.25);
         background: $body-bg;
 
         .login-register-view & {
@@ -45,20 +47,20 @@
             background: $white;
 
             .form-wrapper {
-                margin: 50px auto 80px;
+                margin: 0;
+                padding: $baseline*1.85;
                 box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
                 -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
                 -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-                padding: 30px;
 
                 form {
 
                     .form-field {
-                        margin: 20px 0 0;
+                        @include margin($baseline, 0, 0, 0);
 
                         .input-block {
                             box-shadow: none;
-                            border-radius: 2px;
+                            border-radius: $border-radius;
                         }
 
                         label {

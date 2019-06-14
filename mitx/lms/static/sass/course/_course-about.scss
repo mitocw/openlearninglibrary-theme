@@ -8,7 +8,7 @@
 
             &.course-profile {
                 color: $white;
-                background: $navy-50;
+                background: $navy-50-solid;
                 box-shadow: none;
                 height: auto;
                 padding: 0;
@@ -119,6 +119,17 @@
 
                         .hero {
                             border: none;
+
+                            &:after {
+                                content: '';
+                                background: $navy-35;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                z-index: 1;
+                            }
                         }
                     }
                 }

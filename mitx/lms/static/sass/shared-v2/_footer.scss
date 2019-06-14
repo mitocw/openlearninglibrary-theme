@@ -2,6 +2,7 @@
     box-shadow: none;
     background: $navy;
     color: $white;
+    position: relative;
     font-family: $font-source-sans-pro;
     @include padding($baseline*2, 0, 0, 0);
 
