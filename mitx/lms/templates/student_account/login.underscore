@@ -17,10 +17,10 @@
     </p>
     <p><%- gettext("To continue learning with this account, sign in below.") %></p>
 <% } else { %>
-    <h2><%- gettext("Sign in") %></h2>
+    <h2 class="form-title"><%- gettext("Sign in") %></h2>
 <% } %>
 
-<form id="login" class="login-form" tabindex="-1" method="POST">
+<form id="login" class="login-form" autocomplete="off" tabindex="-1" method="POST">
 
     <p class="sr">
         <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
@@ -38,7 +38,7 @@
     <% if ( context.createAccountOption !== false && !context.syncLearnerProfileData && !(context.enterpriseName && context.currentProvider) ) { %>
     <div class="toggle-form">
         <span class="text"><%- edx.StringUtils.interpolate(gettext('Are you new to {platformName}?'), {platformName: context.platformName }) %></span>
-        <a href="#login" class="form-toggle" data-type="register"><%- gettext("Create an account.") %></a>
+        <a href="#login" class="form-toggle" data-type="register"><%- gettext("Create an account") %></a>
     </div>
     <% } %>
 

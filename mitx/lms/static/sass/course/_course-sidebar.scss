@@ -34,7 +34,8 @@
 				.icon,
 				.fa {
 					color: $blue-gray;
-					font-size: 22px;
+					font-size: 20px;
+					opacity: 1;
 					@include margin(0, $baseline*0.75, 0, 0);
 				}
 

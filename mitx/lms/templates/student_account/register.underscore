@@ -38,7 +38,7 @@
                 </h3>
             </div>
         <% } else { %>
-            <h2><%- gettext('Create an Account')%></h2>
+            <h2 class="form-title"><%- gettext('Create an Account')%></h2>
         <% } %>
     <% } else if (context.autoRegisterWelcomeMessage) { %>
         <span class="auto-register-message"><%- context.autoRegisterWelcomeMessage %></span>
@@ -63,7 +63,7 @@
     <% if (!context.syncLearnerProfileData) { %>
     <div class="toggle-form">
         <span class="text"><%- edx.StringUtils.interpolate(gettext('Already have an {platformName} account?'), {platformName: context.platformName }) %></span>
-        <a href="#login" class="form-toggle" data-type="login"><%- gettext("Sign In.") %></a>
+        <a href="#login" class="form-toggle" data-type="login"><%- gettext("Sign In") %></a>
     </div>
     <% } %>
 

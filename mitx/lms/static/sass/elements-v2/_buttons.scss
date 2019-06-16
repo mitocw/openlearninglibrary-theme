@@ -10,6 +10,12 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
     font-weight: 500 !important;
     letter-spacing: 0.5px !important;
     text-shadow: none;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 .btn-primary {
