@@ -1,0 +1,69 @@
+form {
+  font-size: 1em;
+}
+
+label {
+    color: $primary;
+    text-shadow: none;
+}
+
+textarea,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    background: $form-bg-color;
+    border: 1px solid $bluey-gray;
+    border-radius: $border-radius;
+    box-shadow: none;
+    height: 46px;
+    font-family: $font-roboto;
+    font-size: 14px;
+    padding: ($baseline/4) $baseline;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    @include placeholder($blue-gray);
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:focus {
+        border-color: $secondary;
+        box-shadow: 0 0 0 1px $secondary;
+        outline: none;
+    }
+}
+
+select {
+    background: $white;
+    border-color: $bluey-gray;
+    height: 46px;
+    outline: none;
+    font-family: $font-roboto;
+}
+
+textarea {
+    height: 60px;
+}
+
+input[type="submit"],
+input[type="button"],
+button,
+.button {
+    border-radius: $border-radius;
+    letter-spacing: 0.3px;
+    padding: 4px 20px;
+    vertical-align: top;
+    font-family: $font-source-sans-pro;
+    font-size: 14px;
+
+    &:disabled,
+    &.is-disabled,
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

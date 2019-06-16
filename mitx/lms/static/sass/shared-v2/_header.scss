@@ -1,5 +1,7 @@
 .global-header {
     box-shadow: none;
+    position: relative;
+    z-index: 100;
     border-bottom-color: $light-blue-gray;
     @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
     @include media-up(sm) {

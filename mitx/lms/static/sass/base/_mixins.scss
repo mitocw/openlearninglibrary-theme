@@ -1,0 +1,31 @@
+// Placeholder @include placeholder(red);
+@mixin placeholder($color) {
+
+    &:-moz-placeholder {
+        color: $color;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+// example: @include ellipsis(300px);
+@mixin ellipsis($max-width: 100%) {
+    display: inline-block;
+    max-width: $max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// List @include list();
+@mixin list() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
