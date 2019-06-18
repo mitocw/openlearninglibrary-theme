@@ -44,6 +44,10 @@ body.view-in-course .content-wrapper,
 #main {
     position: relative;
     z-index: 3;
+
+    .view-profile & {
+        max-width: inherit;
+    }
 }
 
 .content-wrapper {
@@ -60,4 +64,12 @@ body.view-in-course .content-wrapper,
 
 .find-courses, .university-profile {
     background: $body-bg;
+}
+
+a {
+    color: $secondary;
+
+    &:hover {
+        color: $primary;
+    }
 }

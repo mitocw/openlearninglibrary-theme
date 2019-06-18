@@ -4,7 +4,8 @@
 $upgrade-color: $primary !default;
 $upgrade-dark-color: darken($upgrade-color, 10%) !default;
 
-.btn {
+.btn,
+.btn-outline-primary {
     box-shadow: none;
     font-family: $font-roboto !important;
     font-weight: 500 !important;
@@ -14,7 +15,7 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
     &:active,
     &:focus {
         outline: none;
-        box-shadow: none;
+        box-shadow: none !important;
     }
 }
 

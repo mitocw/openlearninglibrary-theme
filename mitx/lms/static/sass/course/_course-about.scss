@@ -56,34 +56,36 @@
 
                         .main-cta {
 
+                            span.register {
+                                background: rgba(255, 255, 255, 0.15);
+                                color: $white;
+                                float:none;
+                                margin-bottom: 5px;
+                                @include padding($baseline*0.25, $baseline*0.25, $baseline*0.3, $baseline*0.25);
+                            }
+
                             a {
-                                display: block;
+                                display: inline-block;
                                 @include clearfix;
 
-                                span.register {
-                                    float:none;
-                                    margin-bottom: 5px;
-                                    padding: 5px;
+                                strong {
+                                    @extend %btn;
+                                    @include padding($baseline*0.6, $baseline, $baseline*0.55, $baseline);
+                                    background: $primary;
+                                    border-color: $primary;
+                                    box-shadow: none;
+                                    text-shadow: none;
+                                    width: $baseline*13;
+                                    border-radius: $border-radius;
 
-                                    + strong {
-                                        @extend %btn;
-                                        @include padding($baseline*0.6, $baseline, $baseline*0.55, $baseline);
-                                        background: $primary;
-                                        border-color: $primary;
+                                    &:hover {
+                                        background: darken($primary, 5%);
+                                        border-color: darken($primary, 5%);
+                                    }
+
+                                    &:active,
+                                    &:focus {
                                         box-shadow: none;
-                                        text-shadow: none;
-                                        width: $baseline*13;
-                                        border-radius: $border-radius;
-
-                                        &:hover {
-                                            background: darken($primary, 5%);
-                                            border-color: darken($primary, 5%);
-                                        }
-
-                                        &:active,
-                                        &:focus {
-                                            box-shadow: none;
-                                        }
                                     }
                                 }
 
