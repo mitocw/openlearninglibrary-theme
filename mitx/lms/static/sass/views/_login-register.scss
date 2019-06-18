@@ -79,6 +79,10 @@
                             font-family: $font-source-sans-pro;
                         }
 
+                        .action-label {
+                            line-height: 23px;
+                        }
+
                         label {
                             background: $white;
                             opacity: 1;
@@ -86,13 +90,18 @@
                             font-weight: normal;
                             color: $blue-gray;
                             left: $baseline*0.75;
-                            top: $baseline*0.6;
-                            padding: 0;
+                            right: $baseline*0.15;
+                            top: $baseline*0.5;
                             @include transition(all 0.15s);
+                            @include padding($baseline*0.15, $baseline*0.25, $baseline*0.15, $baseline*0.25);
 
                             &[for='toggle_optional_fields'],
                             &[for='register-terms_of_service'] {
                                 font-size: 14px;
+                            }
+
+                            &[for='password-reset-email'] {
+                                display: inline-block;
                             }
 
                             &.focus-in {
@@ -102,6 +111,7 @@
                                 padding: $baseline*0.25;
                                 position: absolute;
                                 left: $baseline*0.75;
+                                right: auto;
                                 top: -($baseline*0.75);
                             }
 
@@ -155,6 +165,7 @@
                             color: $secondary;
                             float: right;
                             font-size: 14px;
+                            min-width: 0;
 
                         }
 
@@ -165,10 +176,18 @@
                             font-family: $font-source-sans-pro;
                             letter-spacing: 0.3px;
                             @include margin($baseline*1.5, 0, $baseline*1.5, 0);
+
+                            a {
+                                color: $secondary;
+
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
                         }
 
                         &[class*="checkbox-"] {
-                            @include margin($baseline, 0, $baseline*1, 0);
+                            @include margin($baseline*1.25, 0, $baseline*1, 0);
 
                             label {
                                 color: $charcoal-gray;
@@ -270,4 +289,16 @@
         display: inline-block !important;
         padding: 0 5px !important;
     }
+}
+
+// Change autocomplete styles in WebKit
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
 }

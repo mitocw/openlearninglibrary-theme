@@ -127,10 +127,9 @@ from six import string_types
         <div class="main-cta">
         %if user.is_authenticated and registered:
           %if show_courseware_link:
+            <span class="register disabled">${_("You are enrolled in this course")}</span>
             <a href="${course_target}">
           %endif
-
-          <span class="register disabled">${_("You are enrolled in this course")}</span>
 
           %if show_courseware_link:
             <strong>${_("View Course")}</strong>
@@ -345,6 +344,12 @@ from six import string_types
             )}
             </p>
           </li>
+          % else:
+            <li class="prerequisite-course important-dates-item">
+              <span class="icon fa fa-list-ul" aria-hidden="true"></span>
+              <p class="important-dates-item-title">${_("Prerequisites")}</p>
+              <span class="important-dates-item-text pre-requisite">${_("None")}</span>
+            </li>
           % endif
 
           % if get_course_about_section(request, course, "prerequisites"):

@@ -28,18 +28,21 @@ $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 @import 'base/typography';
 @import 'base/reset';
 
+// Elements
+@import 'elements-v2/buttons';
+
 // Components / Shared-v2
 @import 'shared-v2/header';
 @import 'shared-v2/footer';
 @import 'shared-v2/forms';
 
-// Elements
-@import 'elements-v2/buttons';
-
 // Course
 @import 'course/course-about';
 @import 'course/course-details';
 @import 'course/course-sidebar';
+
+// multicourse
+@import 'multicourse/dashboard';
 
 // Views
 @import 'views/account-settings';

@@ -1,0 +1,22 @@
+// lms - views - user/student dashboard
+// ====================
+
+// +Dashboard
+// ====================
+.dashboard {
+
+    .main-container {
+        @include padding-left(0);
+        @include media-up(sm) {
+        	width: 60%;
+        }
+    }
+
+    .side-container {
+    	min-width: 0;
+        @include padding-right(0);
+        @include media-up(sm) {
+        	width: 40%;
+        }
+    }
+}
