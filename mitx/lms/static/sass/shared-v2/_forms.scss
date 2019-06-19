@@ -45,7 +45,10 @@ select {
     outline: none;
     font-family: $font-roboto;
     font-weight: normal !important;
-    min-width: 235px;
+
+    .action-preview-select {
+        height: 36px;
+    }
 }
 
 textarea {
@@ -62,7 +65,6 @@ button,
     vertical-align: top;
     font-family: $font-source-sans-pro;
     font-size: 14px;
-    min-width: 235px;
 
     &:disabled,
     &.is-disabled,

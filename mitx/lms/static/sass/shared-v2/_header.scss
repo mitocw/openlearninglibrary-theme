@@ -3,19 +3,22 @@
     position: relative;
     z-index: 100;
     border-bottom-color: $light-blue-gray;
-    @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
+    @include padding(($baseline*0.5), 0, ($baseline*0.5), 0);
     @include media-up(sm) {
         overflow: visible;
+        @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
     }
 
     .nav-links {
-        @include padding($baseline*0.75, 0, $baseline*0.75, 0);
-        @include media-up(sm) {
+        @include media-up(md) {
             width: 80%;
+            @include padding($baseline*0.75, 0, $baseline*0.75, 0);
         }
 
         .is-authenticated & {
-            @include padding($baseline*0.65, 0, $baseline*0.65, 0);
+            @include media-up(md) {
+                @include padding($baseline*0.65, 0, $baseline*0.65, 0);
+            }
         }
 
         .main {
@@ -197,25 +200,31 @@
     @include padding(0, ($baseline*0.75), 0, ($baseline*0.75));
     margin: auto;
     max-width: $container-default;
-    @include media-up(sm) {
+    @include media-up(md) {
         display: table;
         width: 100%;
     }
 
     > *:not(.hamburger-menu) {
-        @include media-up(sm) {
+        @include media-up(md) {
             display: table-cell !important;
             vertical-align: middle;
         }
     }
 
+    .hamburger-menu {
+        top: $baseline*0.5;
+    }
+
     .header-logo {
-        @include media-up(sm) {
+        display: block;
+        margin: 0;
+        @include media-up(md) {
             display: table;
         }
 
         > * {
-            @include media-up(sm) {
+            @include media-up(md) {
                 display: table-cell !important;
                 float: none !important;
                 vertical-align: middle;
@@ -223,10 +232,16 @@
         }
 
         a {
+            display: inline-block;
+            float: none;
             margin: 0;
 
             .logo {
-                height: ($baseline*2.45);
+                margin: 0;
+                height: ($baseline*1.75);
+                @include media-up(sm) {
+                    height: ($baseline*2.45);
+                }
             }
         }
 
