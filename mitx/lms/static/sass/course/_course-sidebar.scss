@@ -1,59 +1,66 @@
 .course-info {
 
-	.course-sidebar {
-		@include media-up(md) {
-			padding: 0;
-			width: 360px;
-			@include float(right);
-		}
+    .course-sidebar {
+        @include media-up(md) {
+            padding: 0;
+            width: 360px;
+            @include float(right);
+        }
 
-		.important-dates {
+        .important-dates {
 
-			.important-dates-item {
-				border-color: $light-blue-gray;
-				border-style: solid;
-				border-width: 0 0 1px;
-				margin: 0;
-				@include padding($baseline*0.85, 0, $baseline*0.85, 0);
+            .important-dates-item {
+                border-color: rgba($light-blue-gray, .7);
+                border-style: solid;
+                border-width: 0 0 1px;
+                margin: 0;
+                @include padding($baseline*0.85, 0, $baseline*0.85, 0);
 
-				.important-dates-item-title,
-				.important-dates-item-text {
-					font-size: 18px;
-					letter-spacing: 0.5px;
-				}
+                .important-dates-item-title,
+                .important-dates-item-text {
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                }
 
-				.icon,
-				.fa,
-				.important-dates-item-title,
-				.important-dates-item-text {
-					float: none;
-					display: inline-block;
-					vertical-align: middle;
-				}
+                .icon,
+                .fa,
+                .important-dates-item-title,
+                .important-dates-item-text {
+                    float: none;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
 
-				.icon,
-				.fa {
-					color: $blue-gray;
-					font-size: 20px;
-					opacity: 1;
-					@include margin(0, $baseline*0.75, 0, 0);
-				}
+                .icon,
+                .fa {
+                    color: $light-gray-blue;
+                    opacity: 1;
+                    @include margin(0, $baseline*0.75, 0, 0);
+                }
 
-				.important-dates-item-title {
-					color: $blue-gray;
-					font-family: $font-source-sans-pro;
-					@include margin(0, $baseline*0.25, 0, 0);
-				}
+                .icon {
+                    font-size: 24px;
+                }
 
-				.important-dates-item-text {
-					float: none;
-					font-weight: normal;
-				}
+                .fa {
+                    font-size: 20px;
+                }
 
-				&:first-child {
-					border-top-width: 1px;
-				}
-			}
-		}
-	}
+                .important-dates-item-title {
+                    color: $blue-gray;
+                    font-family: $font-source-sans-pro;
+                    @include margin(0, $baseline*0.25, 0, 0);
+                }
+
+                .important-dates-item-text {
+                    float: none;
+                    font-weight: normal;
+                }
+
+                &:first-child {
+                    border-top-width: 1px;
+                }
+            }
+        }
+    }
 }

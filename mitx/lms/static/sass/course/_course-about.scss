@@ -1,5 +1,5 @@
 .content-wrapper {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 
     .course-info {
@@ -124,7 +124,7 @@
 
                             &:after {
                                 content: '';
-                                background: $navy-35;
+                                background: $navy-30;
                                 width: 100%;
                                 height: 100%;
                                 position: absolute;
