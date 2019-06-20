@@ -165,7 +165,6 @@
                             float: right;
                             font-size: 14px;
                             min-width: 0;
-
                         }
 
                         .plaintext-field {
@@ -243,6 +242,15 @@
                             width: calc(52% - 11px);
                         }
                     }
+
+                    &.password-reset-form {
+
+                        .action-label {
+                            font-family: $font-source-sans-pro;
+                            font-size: 14px;
+                            line-height: 22px;
+                        }
+                    }
                 }
 
                 .action-primary {
@@ -278,15 +286,6 @@
                 }
             }
         }
-    }
-}
-
-.login-form,
-.password-reset-form {
-
-    label {
-        display: inline-block !important;
-        padding: 0 5px !important;
     }
 }
 
