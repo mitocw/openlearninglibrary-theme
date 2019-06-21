@@ -10,9 +10,11 @@ from courseware.courses import get_course_about_section
 from django.conf import settings
 from six import text_type
 from edxmako.shortcuts import marketing_link
+from opaque_keys.edx.keys import CourseKey
+from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
 from openedx.core.djangolib.markup import HTML, Text
 from openedx.core.lib.courses import course_image_url
-from six import string_types
+from six import string_types, text_type
 %>
 
 <%inherit file="../main.html" />
@@ -256,19 +258,14 @@ from six import string_types
             </li>
           % endif
 
-          % if not course.start_date_is_still_default:
-              <%
-                  course_start_date = course.advertised_start or course.start
-              %>
-            <li class="important-dates-item">
-              <span class="fa fa-calendar" aria-hidden="true"></span>
+          <li class="important-dates-item">
+              <span class="icon icon-file" aria-hidden="true"></span>
               <p class="important-dates-item-title">${_("Year Created:")}</p>
-                  <%
-                    course_date_string = course_start_date.strftime('%Y')
-                  %>
-                  <span class="important-dates-item-text start-date localized_datetime" data-language="${LANGUAGE_CODE}">${course_date_string}</span>
-            </li>
-          % endif
+              <%
+                course_created_year = CourseOverview.get_from_id(CourseKey.from_string(text_type(course.id))).created.strftime('%Y')
+              %>
+              <span class="important-dates-item-text">${_(course_created_year)}</span>
+          </li>
 
           ## We plan to ditch end_date (which is not stored in course metadata),
           ## but for backwards compatibility, show about/end_date blob if it exists.
