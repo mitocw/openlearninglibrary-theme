@@ -39,7 +39,6 @@
                     label {
                         color: $light-gray-blue;
                         font-size: 18px;
-                        font-family: $font-source-sans-pro;
                         font-weight: normal;
                         letter-spacing: 0.5px;
                         @include margin-right(5px);
@@ -77,14 +76,12 @@
 
                     .header {
                         color: $charcoal-gray;
-                        font-family: $font-source-sans-pro;
                         font-weight: 600;
                         font-size: 26px;
                         letter-spacing: 0.23px;
                     }
 
                     .subheader {
-                        font-family: $font-source-sans-pro;
                         font-size: 18px;
                         letter-spacing: 0.5px;
                     }
@@ -195,7 +192,6 @@
 
                                         .u-field-value {
                                             color: $charcoal-gray;
-                                            font-family: $font-source-sans-pro;
                                             font-size: 26px;
                                             font-weight: 600;
                                             letter-spacing: 0.23px;
@@ -208,7 +204,6 @@
 
                                         .u-field-value {
                                             color: $charcoal-gray;
-                                            font-family: $font-source-sans-pro;
                                             font-size: 18px;
                                         }
                                     }
@@ -220,7 +215,6 @@
 
                                         .u-field-value {
                                             color: $charcoal-gray;
-                                            font-family: $font-source-sans-pro;
                                             font-size: 18px;
                                         }
 
@@ -244,7 +238,6 @@
                                     .u-field-title,
                                     .u-field-value-readonly {
                                         color: $charcoal-gray;
-                                        font-family: $font-source-sans-pro;
                                         letter-spacing: 0.5px;
                                         line-height: normal;
                                     }
@@ -306,7 +299,6 @@
                                 padding-bottom: $baseline;
                                 margin-bottom: $baseline;
                                 color: $charcoal-gray;
-                                font-family: $font-source-sans-pro;
                                 font-weight: 600;
                                 font-size: 26px;
                                 letter-spacing: 0.23px;
