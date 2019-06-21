@@ -92,4 +92,13 @@ window.onload = function () {
             }
         });
     });
+
+    $("a.form-toggle").click(function () {
+        var interval = setInterval(function () {
+            if ($("label").length) {
+                clearInterval(interval);
+                postRender();
+            }
+        });
+    });
 }
