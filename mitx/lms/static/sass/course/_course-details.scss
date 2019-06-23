@@ -170,7 +170,7 @@
         .accordion-title {
             position: relative;
             border-top: 1px solid $light-blue-gray-70;
-            @include padding($baseline*0.75, 0, $baseline*0.75, 0);
+            @include padding($baseline*0.75, $baseline, $baseline*0.75, 0);
 
             &:after {
                 content: '';
