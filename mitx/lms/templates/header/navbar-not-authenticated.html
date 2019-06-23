@@ -51,19 +51,19 @@ from six import text_type
       </ul>
       % if allows_login:
         % if restrict_enroll_for_course:
-          <div class="mobile-nav-item hidden-mobile nav-item">
+          <div class="mobile-nav-item hidden-mobile nav-item mobile-pad-item">
             <a class="sign-in-btn btn" href="${reverse('course-specific-login', args=[text_type(course.id)])}${login_query()}">${_("Sign in")}</a>
           </div>
-          <div class="mobile-nav-item hidden-mobile nav-item">
-            <a class="register-btn btn" href="${reverse('course-specific-register', args=[text_type(course.id)])}">${_("Create Account")}</a>
+          <div class="mobile-nav-item hidden-mobile nav-item mobile-pad-item">
+            <a class="register-btn btn mt0" href="${reverse('course-specific-register', args=[text_type(course.id)])}">${_("Create Account")}</a>
           </div>
         % endif
       % endif
-      <div class="mobile-nav-item hidden-mobile nav-item">
+      <div class="mobile-nav-item hidden-mobile nav-item mobile-pad-item">
         <a class="sign-in-btn btn" href="/login${login_query()}">${_("Sign in")}</a>
       </div>
-      <div class="mobile-nav-item hidden-mobile nav-item">
-        <a class="register-btn btn" href="/register${login_query()}">${_("Create Account")}</a>
+      <div class="mobile-nav-item hidden-mobile nav-item mobile-pad-item">
+        <a class="register-btn btn mt0" href="/register${login_query()}">${_("Create Account")}</a>
       </div>
     </div>
   </div>

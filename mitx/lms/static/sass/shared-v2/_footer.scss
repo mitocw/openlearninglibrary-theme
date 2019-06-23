@@ -21,13 +21,20 @@
             	margin: 0;
 
             	.nav-colophon {
-            		@include margin(0, 0, $baseline*4.5, 0);
+            		@include margin(0, 0, $baseline*2, 0);
+                    @include media-up(md) {
+                        @include margin(0, 0, $baseline*4.5, 0);
+                    }
 
             		ol,
             		ul {
-            			display: inline-block;
-            			min-width: $baseline*6.25;
-            			vertical-align: top;
+                        margin-bottom: $baseline*1.5;
+                        @include media-up(sm) {
+                            display: inline-block;
+                            min-width: $baseline*6.25;
+                            vertical-align: top;
+                            margin-bottom: 0;
+                        }
 
             			li {
             				display: block;
@@ -46,11 +53,13 @@
             				}
 
             				&.list-title {
-            					display: inline-block;
             					font-size: 18px;
             					line-height: 1.56;
             					letter-spacing: 0.5px;
             					border-bottom: 1px solid $white;
+                                @include media-up(sm) {
+                                    display: inline-block;
+                                }
             				}
 
             				&:last-child {
@@ -65,6 +74,10 @@
         &#footer-bottom {
         	background:$navy-90-solid;
         	@include padding($baseline, 0, $baseline, 0);
+            text-align: center;
+            @include media-up(sm) {
+                @include text-align(left);
+            }
 
         	.container {
                 @include clearfix;
@@ -72,14 +85,22 @@
         	}
 
         	.nav-legal {
+                margin-bottom: $baseline;
         		@include media-up(sm) {
-        			@include float(left);
+                    @include float(left);
+                    margin-bottom: 0;
         		}
 
         		ul {
 
         			li {
+                        border-right: 1px solid $white;
+                        @include padding-right($baseline*0.5);
         				@include margin-right($baseline*0.5);
+                        @include media-up(sm) {
+                            @include padding-right(0);
+                            border-right: 0;
+                        }
 
         				a {
         					color: $white;
@@ -94,7 +115,9 @@
         				}
 
         				&:last-child {
+                            @include padding-right(0);
         					@include margin-right(0);
+                            border-right: 0;
         				}
         			}
         		}
