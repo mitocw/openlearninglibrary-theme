@@ -28,7 +28,6 @@
     .course-info {
 
         .details {
-            font-family: $font-family-sans-serif;
             @include media-up(md) {
                 width: 58.3333333333%;
                 font-size: 18px;

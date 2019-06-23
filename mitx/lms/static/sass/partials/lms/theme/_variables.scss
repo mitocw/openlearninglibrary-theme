@@ -14,6 +14,8 @@ $secondary:             #1e7be2;
 $body-bg:               transparent;
 $form-bg-color:         #ffffff;
 
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+
 // Initialize the Open edX Bootstrap theme
 @import 'edx-bootstrap/sass/open-edx/theme';
 
@@ -24,7 +26,7 @@ $form-bg-color:         #ffffff;
 $font-roboto:           'Roboto', sans-serif;
 $font-source-sans-pro:  'Source Sans Pro', sans-serif;
 
-// Colours
+// Colors
 $deep-sky-blue:         $secondary;
 $gray-mid:              #b0b0b0;
 $gray-lightest:         #f2f2f2;

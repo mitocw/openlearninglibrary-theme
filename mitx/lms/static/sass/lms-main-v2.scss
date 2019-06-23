@@ -8,13 +8,10 @@
 
 // Load the RTL version of the edX Pattern Library
 $pattern-library-path: '../../edx-pattern-library' !default;
-
 @import 'edx-pattern-library/pattern-library/sass/edx-pattern-library-ltr';
 
 // Load the shared build
 @import 'build-lms-v2';
-
-$font-family-sans-serif: 'Source Sans Pro', sans-serif;
 
 // Additional sass rules that must come at the end of the compilation for overriding purposes
 @import 'overrides';

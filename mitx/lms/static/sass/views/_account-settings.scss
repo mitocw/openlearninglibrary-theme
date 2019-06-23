@@ -35,7 +35,6 @@
 
 .wrapper-account-settings {
     color: $charcoal-gray;
-    font-family: $font-source-sans-pro;
 
     .account-settings-container {
         padding: 0;
@@ -102,7 +101,6 @@
                 #account-deletion-container {
 
                     .account-settings-header-subtitle {
-                        font-family: $font-source-sans-pro;
                         font-size: 16px;
                         letter-spacing: 0.44px;
                         line-height: 24px;
@@ -118,7 +116,6 @@
 
                     .account-settings-header-subtitle-warning {
                         color: $tomato;
-                        font-family: $font-source-sans-pro;
                         font-size: 16px;
                         letter-spacing: 0.44px;
                         line-height: 24px;
@@ -239,7 +236,6 @@
 
                             .u-field-message-help {
                                 color: $bluey-gray;
-                                font-family: $font-source-sans-pro;
                                 font-size: 16px;
                                 line-height: 24px;
                                 letter-spacing: 0.44px;

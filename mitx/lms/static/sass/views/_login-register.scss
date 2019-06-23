@@ -56,7 +56,6 @@
                 h2,
                 .form-title {
                     color: $charcoal-gray;
-                    font-family: $font-source-sans-pro;
                     font-weight: normal;
                     letter-spacing: 0.28px;
                 }
@@ -73,10 +72,6 @@
                         @include clearfix;
                         @include margin(0, 0, $baseline, 0);
 
-                        label,
-                        .input-block {
-                            font-family: $font-source-sans-pro;
-                        }
 
                         .action-label {
                             line-height: 23px;
@@ -171,7 +166,6 @@
                             color: $charcoal-gray;
                             font-size: 14px;
                             font-weight: normal;
-                            font-family: $font-source-sans-pro;
                             letter-spacing: 0.3px;
                             @include margin($baseline*1.5, 0, $baseline*1.5, 0);
 
@@ -246,7 +240,6 @@
                     &.password-reset-form {
 
                         .action-label {
-                            font-family: $font-source-sans-pro;
                             font-size: 14px;
                             line-height: 22px;
                         }
