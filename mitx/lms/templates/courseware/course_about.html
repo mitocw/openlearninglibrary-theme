@@ -258,15 +258,6 @@ from six import string_types, text_type
             </li>
           % endif
 
-          <li class="important-dates-item">
-              <span class="icon icon-file" aria-hidden="true"></span>
-              <p class="important-dates-item-title">${_("Year Created:")}</p>
-              <%
-                course_created_year = CourseOverview.get_from_id(CourseKey.from_string(text_type(course.id))).created.strftime('%Y')
-              %>
-              <span class="important-dates-item-text">${_(course_created_year)}</span>
-          </li>
-
           ## We plan to ditch end_date (which is not stored in course metadata),
           ## but for backwards compatibility, show about/end_date blob if it exists.
           % if course.end:
@@ -287,6 +278,20 @@ from six import string_types, text_type
             </li>
           % endif
 
+          % if get_course_about_section(request, course, "effort"):
+            <li class="important-dates-item"><span class="icon icon-clock" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort:")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
+          % endif
+
+          ##<li class="important-dates-item"><span class="fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length:')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
+
+          %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
+            <li class="important-dates-item">
+              <span class="fa fa-money" aria-hidden="true"></span>
+              <p class="important-dates-item-title">${_("Price:")}</p>
+              <span class="important-dates-item-text">${course_price}</span>
+            </li>
+          %endif
+
           % if course.end and not course.start_date_is_still_default:
             <li class="important-dates-item">
                 <span class="icon icon-clock" aria-hidden="true"></span>
@@ -301,30 +306,25 @@ from six import string_types, text_type
                 %>
                 % if course_length > 1:
                     <%
-                      course_length = str(course_length) + ' Weeks'
+                      course_length = str(course_length) + ' weeks'
                     %>
                 % else:
                     <%
-                      course_length = str(course_length) + ' Week'
+                      course_length = str(course_length) + ' week'
                     %>
                 % endif
                 <span class="important-dates-item-text final-date localized_datetime"  data-language="${LANGUAGE_CODE}">${course_length}</span>
             </li>
           % endif
 
-          % if get_course_about_section(request, course, "effort"):
-            <li class="important-dates-item"><span class="icon icon-clock" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort:")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
-          % endif
-
-          ##<li class="important-dates-item"><span class="fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length:')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
-
-          %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
-            <li class="important-dates-item">
-              <span class="fa fa-money" aria-hidden="true"></span>
-              <p class="important-dates-item-title">${_("Price:")}</p>
-              <span class="important-dates-item-text">${course_price}</span>
-            </li>
-          %endif
+          <li class="important-dates-item">
+              <span class="icon icon-file" aria-hidden="true"></span>
+              <p class="important-dates-item-title">${_("Year Created:")}</p>
+              <%
+                course_created_year = CourseOverview.get_from_id(CourseKey.from_string(text_type(course.id))).created.strftime('%Y')
+              %>
+              <span class="important-dates-item-text">${_(course_created_year)}</span>
+          </li>
 
           % if pre_requisite_courses:
           <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
@@ -345,7 +345,7 @@ from six import string_types, text_type
             <li class="prerequisite-course important-dates-item">
               <span class="icon icon-user" aria-hidden="true"></span>
               <p class="important-dates-item-title">${_("Prerequisites:")}</p>
-              <span class="important-dates-item-text pre-requisite">${_("None")}</span>
+              <span class="important-dates-item-text pre-requisite">${_("none")}</span>
             </li>
           % endif
 

@@ -46,8 +46,13 @@
 
                     .u-field-value {
                         min-width: 235px;
+
+                        select {
+                            height: 40px;
+                        }
                     }
 
+                    .btn-change-privacy,
                     .profile-records-button {
                         background: $primary;
                         border-color: $primary;
@@ -57,12 +62,16 @@
                         font-weight: 500;
                         height: 40px;
                         line-height: normal;
-                        min-width: 200px;
 
                         &:hover {
                             background: darken($primary, 5%);
                             border-color: darken($primary, 5%);
                         }
+                    }
+
+                    .profile-records-button {
+                        min-width: 200px;
+                        @include margin-left($baseline/4);
                     }
                 }
             }
