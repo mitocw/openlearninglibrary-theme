@@ -126,16 +126,21 @@
                     padding: 0;
                     list-style: none;
                     font-size: 0; //to remove white space between inline HTML elements, and child must have font-size
-                    @include margin-right($baseline*0.8);
                     @include margin-left(0);
                     @include media-up(md) {
                         display: inline-block;
+                    }
+                    @include media-up(lg) {
+                        @include margin-right($baseline*0.8);
                     }
 
                     li {
                         display: inline-block;
                         margin: 0;
-                        @include padding($baseline*0.25, $baseline*1.1, $baseline*0.25, $baseline*1.1);
+                        @include padding($baseline*0.25, $baseline*0.6, $baseline*0.25, $baseline*0.6);
+                        @include media-up(md) {
+                            @include padding($baseline*0.25, $baseline*1.1, $baseline*0.25, $baseline*1.1);
+                        }
 
                         a {
                             font-size: $baseline;
@@ -183,8 +188,10 @@
                     background-color: $primary;
                     border-color: $primary;
                     color: $white;
-                    min-width: $baseline*10;
                     border-radius: $border-radius;
+                    @include media-up(lg) {
+                        min-width: $baseline*10;
+                    }
 
                     &:hover {
                         background-color: $white;

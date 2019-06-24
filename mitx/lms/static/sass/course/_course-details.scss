@@ -64,7 +64,11 @@
                 h4,
                 h5,
                 h6 {
-                    font-weight: normal;
+                    font-weight: normal !important;
+
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
                 }
 
                 h1 { font-size: 40px; }
@@ -108,6 +112,48 @@
                     @include margin(0, 0, $baseline*0.5, 0);
                 }
             }
+
+            .course-staff {
+
+                h2 {
+                    margin-top: 70px;
+                }
+
+                .teacher {
+                    min-height: 160px;
+                    position: relative;
+                    @include padding-left($baseline*9);
+
+                    .teacher-image {
+                        border-radius: 50%;
+                        height: 160px;
+                        width: 160px;
+                        overflow: hidden;;
+                        @include float(left);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 700 !important;
+                        @include margin($baseline*0.25, 0, 0, 0);
+
+                        + p {
+                            @include margin(0, 0, $baseline*0.5, 0);
+                        }
+                    }
+
+                    p {
+                        line-height: 32px;
+                    }
+                }
+            }
         }
     }
 }
@@ -144,7 +190,7 @@
             }
 
             .instructor-name {
-                font-weight: 700;
+                font-weight: 700 !important;
                 @include margin($baseline*0.25, 0, 0, 0);
             }
 
@@ -158,6 +204,8 @@
         }
     }
 }
+
+
 
 // Accordion
 .accordion {
