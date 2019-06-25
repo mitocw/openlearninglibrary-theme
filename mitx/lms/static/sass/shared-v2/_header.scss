@@ -27,8 +27,11 @@
             .nav-item {
 
                 &.nav-tab {
-                    font-size: 20px;
-                    @include padding(0, $baseline, 0, $baseline);
+                    @include padding(0, $baseline*0.75, 0, $baseline*0.75);
+                    @include media-up(md) {
+                        font-size: 20px;
+                        @include padding(0, $baseline, 0, $baseline);
+                    }
 
                     .tab-nav-link {
                         border-width: 2px;
@@ -318,30 +321,51 @@
     border-top-color: $light-blue-gray;
     @include margin($baseline*0.5, 0, -($baseline*0.5), 0);
 
+    .is-authenticated & {
+        padding: $baseline*0.5 0;
+    }
+
     .mobile-nav-item {
+
+        a {
+            border: none;
+            color: $charcoal-gray;
+            font-size: 20px;
+            font-weight: normal;
+            padding: 0 $baseline*0.75;
+            margin-bottom: $baseline*0.75;
+            @include media-down(sm) {
+                text-align: center;
+            }
+
+            &:hover,
+            &:focus {
+                background: $ice-blue;
+                color: $charcoal-gray;
+            }
+        }
+
+        &.nav-item + .dropdown-item {
+            margin-top: $baseline*0.5;
+            padding-top: $baseline*0.75;
+            position: relative;
+
+            &:before {
+                content: '';
+                background: $ice-blue;
+                margin: auto;
+                height: 1px;
+                position: absolute;
+                left: $baseline*0.75;
+                right: $baseline*0.75;
+                top: 0;
+            }
+        }
 
         &.custom-nav {
             margin: 0;
             padding: $baseline*0.5 0;
             position: relative;
-
-            a {
-                border: none;
-                color: $charcoal-gray;
-                font-size: 20px;
-                font-weight: normal;
-                padding: 0 $baseline*0.75;
-                margin-bottom: $baseline*0.75;
-                @include media-up(sm) {
-                    text-align: center;
-                }
-
-                &:hover,
-                &:focus {
-                    background: $ice-blue;
-                    color: $charcoal-gray;
-                }
-            }
 
             &:after {
                 content: '';
@@ -368,7 +392,7 @@
 
             &.sign-in-btn {
                 background-color: $white;
-                border-color: $primary;
+                border: 1px solid $primary;
                 color: $primary;
                 min-width: $baseline*7;
                 border-radius: $border-radius;

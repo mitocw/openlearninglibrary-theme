@@ -32,7 +32,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
       <div class="mobile-nav-item hidden-mobile nav-item nav-tab">
         <a class="${'active ' if reverse('dashboard') == request.path else ''}tab-nav-link" href="${reverse('dashboard')}"
              aria-current="${'page' if reverse('dashboard') == request.path else 'false'}">
-             ${_("Courses")}
+             ${_("My Courses")}
         </a>
       </div>
       % if show_program_listing:
@@ -82,7 +82,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
       </div>
     % endif
     <div class="mobile-nav-item hidden-mobile nav-item">
-      <a class="help-link" href="${help_link}" target="_blank">${_("Help")}</a>
+      <a class="help-link" href="javascript:void(0);">${_("Help Center")}</a>
     </div>
     <%include file="user_dropdown.html"/>
   </div>

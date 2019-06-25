@@ -125,6 +125,7 @@
                     @include padding-left($baseline*9);
 
                     .teacher-image {
+                        border: none;
                         border-radius: 50%;
                         height: 160px;
                         width: 160px;
@@ -135,6 +136,9 @@
                         top: 0;
 
                         img {
+                            border-radius: 50%;
+                            height: 160px;
+                            width: 160px;
                             object-fit: cover;
                         }
                     }
@@ -165,6 +169,7 @@
         @include margin(0, 0, $baseline*1.5, 0);
 
         figure {
+            border: none;
             border-radius: 50%;
             height: 160px;
             overflow: hidden;;
@@ -173,6 +178,9 @@
 
 
             img {
+                border-radius: 50%;
+                height: 160px;
+                width: 160px;
                 object-fit: cover;
             }
         }

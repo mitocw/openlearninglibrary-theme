@@ -192,7 +192,7 @@ from six import string_types, text_type
               href_class = "register"
           %>
           <a href="${reg_href}" class="${href_class}">
-            ${_("Get Started")}
+            ${_("Enroll to Get Started")}
           </a>
           <div id="register_error"></div>
         %endif
@@ -293,7 +293,7 @@ from six import string_types, text_type
           %endif
 
           % if course.end and not course.start_date_is_still_default:
-            <li class="important-dates-item">
+            <li class="important-dates-item visible-imp">
                 <span class="icon icon-clock" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Length:")}</p>
                 <%
@@ -317,7 +317,7 @@ from six import string_types, text_type
             </li>
           % endif
 
-          <li class="important-dates-item">
+          <li class="important-dates-item visible-imp">
               <span class="icon icon-file" aria-hidden="true"></span>
               <p class="important-dates-item-title">${_("Year Created:")}</p>
               <%
@@ -328,7 +328,7 @@ from six import string_types, text_type
 
           % if pre_requisite_courses:
           <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
-          <li class="prerequisite-course important-dates-item">
+          <li class="important-dates-item prerequisite-course visible-imp">
             <span class="icon icon-user" aria-hidden="true"></span>
             <p class="important-dates-item-title">${_("Prerequisites:")}</p>
             ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
@@ -342,7 +342,7 @@ from six import string_types, text_type
             </p>
           </li>
           % else:
-            <li class="prerequisite-course important-dates-item">
+            <li class="important-dates-item prerequisite-course visible-imp">
               <span class="icon icon-user" aria-hidden="true"></span>
               <p class="important-dates-item-title">${_("Prerequisites:")}</p>
               <span class="important-dates-item-text pre-requisite">${_("none")}</span>

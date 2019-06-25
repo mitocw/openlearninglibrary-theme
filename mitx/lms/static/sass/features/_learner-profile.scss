@@ -108,7 +108,7 @@
                     .wrapper-profile-section-container-one {
                         @include padding-right($baseline*0.75);
                         @include margin-right($baseline*0.75);
-                        width: 33.333333%;
+                        width: 35%;
 
                         .wrapper-profile-section-one {
                             border: none;
@@ -284,7 +284,7 @@
 
                     .wrapper-profile-section-container-two {
                         padding: 0;
-                        width: 66.66666%;
+                        width: 65%;
                         @include clearfix;
                         @include media-up(sm) {
                             display: flex;
@@ -315,7 +315,6 @@
                         }
 
                         .wrapper-profile-bio {
-                            @include margin-right($baseline*0.75);
 
                             .wrapper-profile-section-two {
                                 @include clearfix;
@@ -333,6 +332,11 @@
                                         font-size: 18px;
                                         line-height: 32px;
                                         letter-spacing: 0.5px;
+                                    }
+
+                                    .u-field-value,
+                                    .u-field-footer {
+                                        @include clearfix;
                                     }
                                 }
 

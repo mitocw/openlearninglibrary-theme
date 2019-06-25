@@ -8,15 +8,18 @@
     .main-container {
         @include padding-left(0);
         @include media-up(sm) {
-        	width: 60%;
+            width: 60%;
+        }
+        @include media-down(sm) {
+            @include padding-right(0);
         }
     }
 
     .side-container {
-    	min-width: 0;
+        min-width: 0;
         @include padding-right(0);
         @include media-up(sm) {
-        	width: 40%;
+            width: 40%;
         }
     }
 }
