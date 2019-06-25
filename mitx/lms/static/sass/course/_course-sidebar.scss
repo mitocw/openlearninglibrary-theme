@@ -63,8 +63,8 @@
                 }
 
                 display: none; // Hide all list items as per design
-                &:nth-last-of-type(-n+3) {
-                    display: block; // Enable last three items as per design
+                &.visible-imp {
+                    display: block !important; // Enable the selected items as per design
                 }
             }
         }
