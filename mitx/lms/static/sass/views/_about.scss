@@ -1,3 +1,73 @@
 // =================================
 // lms - views - About
 // =================================
+.page-banner {
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 25px;
+
+    .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .row {
+        display: flex;
+        height: 300px;
+        align-items: flex-end;
+        border: 0;
+        box-shadow: none;
+        background: none;
+    }
+
+    h1 {
+        margin: 0;
+        font-weight: 300;
+        color: #fff;
+        font-size: 40px;
+        margin: 0 0 35px;
+        text-align: left;
+    }
+}
+
+.about-block {
+
+    .about-content {
+        line-height: 1.3;
+        @include media-up(sm) {
+            flex: 0 0 60%;
+        }
+
+        .text-1 {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+
+    .socialmedia-area {
+        margin-left: auto;
+        @include media-up(sm) {
+            flex: 0 0 40%;
+        }
+    }
+}
+
+
+.faq {
+
+    h1 {
+        font-size: 25px;
+        font-weight: 300;
+        text-align: left;
+    }
+}
+
+.accordion {
+
+    .item {
+        .accordion-content {
+            padding-left: 21px;
+            p { margin: 0 0 25px; }
+        }
+    }
+}

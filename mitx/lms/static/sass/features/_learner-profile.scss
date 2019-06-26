@@ -49,6 +49,10 @@
 
                         select {
                             height: 40px;
+
+                            &:disabled {
+                                opacity: .5;
+                            }
                         }
                     }
 

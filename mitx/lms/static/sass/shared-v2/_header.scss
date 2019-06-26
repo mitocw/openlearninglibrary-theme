@@ -22,6 +22,9 @@
         }
 
         .main {
+            @include media-up(md) {
+                @include margin(0, 0, 0, $baseline);
+            }
             @include media-up(xl) {
                 @include margin(0, 0, 0, $baseline*4);
             }

@@ -71,6 +71,10 @@
                         border-bottom-color: $primary;
                     }
 
+                    &:focus {
+                        outline: none;
+                    }
+
                     &:last-child {
                         @include margin-right(0);
                     }
@@ -79,7 +83,7 @@
         }
 
         .account-settings-sections {
-            @include margin($baseline*6.5, 0, $baseline, $baseline*5);
+            @include margin($baseline*5, 0, $baseline, $baseline*5);
 
             .section {
                 border-bottom: none;
