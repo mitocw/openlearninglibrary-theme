@@ -1,0 +1,154 @@
+.view-in-course {
+
+    .container {
+        padding-top: 0;
+    }
+}
+
+.discussion-board,
+.content-wrapper .container > div {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-top-color: $light-blue-gray !important;
+    box-shadow: none;
+}
+
+.wrapper-preview-menu {
+    background-color: rgba($navy, 0.8);
+    padding-top: $baseline;
+    padding-bottom: $baseline;
+
+    .preview-menu {
+
+        label,
+        .action-preview-select {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        label {
+            color: $light-gray-blue !important;
+            font-size: 18px;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+            @include margin-right(5px);
+        }
+
+        .action-preview-select {
+            min-width: 235px;
+            height: 40px;
+        }
+    }
+}
+
+.navbar,
+.progress,
+.instructor {
+    margin-top: $baseline;
+    margin-bottom: $baseline*2;
+
+    &.course-tabs {
+        overflow-x: scroll;
+        @include media-up(sm) {
+            overflow-x: hidden;
+        }
+    }
+
+    .navbar-nav,
+    .course-tabs {
+        @include margin-left(0);
+
+        .nav-item,
+        .tab {
+            margin-bottom: 0;
+
+            .nav-link,
+            a {
+                color: $charcoal-gray;
+                font-size: 18px;
+                border-bottom-width: 2px;
+
+                &.active {
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.course-view {
+    padding: 0 !important;
+    margin-bottom: $baseline*3 !important;
+
+    .page-header {
+        background: $ice-blue;
+        border: none;
+        margin-bottom: $baseline*1.5;
+
+        .page-title {
+            margin: 0;
+        }
+    }
+
+    .course-outline {
+
+        &#main {
+            padding: 0;
+        }
+
+        #expand-collapse-outline-all-button {
+            background-color: $white;
+            border-color: $primary;
+            border-radius: $border-radius;
+            color: $primary;
+            font-size: 14px;
+            position: relative;
+            z-index: 10;
+
+            &:hover {
+                background: $primary;
+                color: $white;
+            }
+        }
+
+        .block-tree {
+
+            .outline-item {
+                color: $charcoal-gray;
+                margin-bottom: 0;
+
+                .accordion-trigger {
+
+                    .fa {
+                        color: $charcoal-gray;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    a:not(.btn) {
+        color: $primary;
+    }
+}
+
+.date-summary-container .date-summary-todays-date {
+    border-color: $primary;
+}
+
+.instructor-dashboard-content-2 .instructor-nav .nav-item .btn-link {
+    color: $charcoal-gray;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}

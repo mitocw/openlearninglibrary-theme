@@ -64,14 +64,28 @@
                         line-height: normal;
 
                         &:hover {
-                            background: darken($primary, 5%);
-                            border-color: darken($primary, 5%);
+                            background: $white;
+                            border-color: $primary;
+                            color: $primary;
                         }
                     }
 
                     .profile-records-button {
                         min-width: 200px;
                         @include margin-left($baseline/4);
+                    }
+
+                    .u-field-message {
+
+                        .u-field-message-notification {
+                            color: $light-gray-blue;
+
+                            a {
+                                color: $white;
+                                @include margin-left(2px);
+                                text-decoration: underline;
+                            }
+                        }
                     }
                 }
             }

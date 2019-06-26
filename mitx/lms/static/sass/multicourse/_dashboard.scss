@@ -8,7 +8,7 @@
     .main-container {
         @include padding-left(0);
         @include media-up(sm) {
-            width: 60%;
+            width: 70%;
         }
         @include media-down(sm) {
             @include padding-right(0);
@@ -19,7 +19,127 @@
         min-width: 0;
         @include padding-right(0);
         @include media-up(sm) {
-            width: 40%;
+            width: 30%;
+        }
+    }
+
+    #my-courses {
+        margin: $baseline auto $baseline*3;
+
+        .wrapper-header-courses {
+
+            .header-courses {
+                font-size: 24px;
+            }
+        }
+
+        .listing-courses {
+
+            .course-item {
+                margin-bottom: $baseline*0.75;
+                padding-bottom: $baseline*0.75;
+
+                .course-container {
+                    border-color: $light-blue-gray;
+                    border-radius: 0;
+
+                    .course {
+                        position: relative;
+                        @include padding-left(240px);
+
+                        .wrapper-course-image {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            height: 100%;
+                            max-height: none;
+                            width: 220px;
+
+                            a {
+                                height: 100%;
+                                width: 100%;
+
+                                img {
+                                    height: 100%;
+                                    object-fit: cover;
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .wrapper-course-details {
+
+                            .course-title {
+                                margin-bottom: $baseline*1.5;
+
+                                a {
+                                    color: $navy;
+                                    font-size: 18px;
+                                    @include media-up(sm) {
+                                        font-size: 22px;
+                                    }
+
+                                    &:hover {
+                                        color: $primary;
+                                    }
+                                }
+                            }
+
+                            .course-info {
+
+                                * {
+                                    color: $charcoal-gray;
+                                }
+                            }
+
+                            .wrapper-course-actions {
+                                margin-top: 0;
+                                margin-bottom: $baseline*0.5;
+
+                                .course-actions {
+
+                                    .enter-course {
+                                        color: $primary;
+                                        border-color: $primary;
+                                        border-radius: $border-radius;
+
+                                        &:hover {
+                                            background: $primary;
+                                            border-color: $primary;
+                                            color: $white;
+                                        }
+                                    }
+
+                                    .wrapper-action-more {
+
+                                        .actions-dropdown {
+                                            min-width: 0;
+
+                                            .actions-item {
+
+                                                .action-unenroll {
+                                                    padding: $baseline*0.25;
+
+                                                    &:hover {
+                                                        color: $primary;
+                                                        text-decoration: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 10px rgba(207, 216, 220, .8);
+                            -webkit-box-shadow: 0 0 10px rgba(207, 216, 220, .8);
+                            -moz-box-shadow: 0 0 10px rgba(207, 216, 220, .8);
+                        }
+                    }
+                }
+            }
         }
     }
 }
