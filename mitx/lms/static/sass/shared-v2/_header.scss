@@ -304,15 +304,19 @@
             display: inline-block;
             float: none;
             margin: 0;
-            @include media-down(sm) {
-                padding-top: 2px;
+            padding-top: 8px;
+            @include media-up(sm) {
+                padding-top: 5px;
+            }
+            @include media-up(md) {
+                padding-top: 0;
             }
 
             .logo {
                 margin: 0;
-                height: ($baseline*2);
+                height: ($baseline*1.4);
                 @include media-up(sm) {
-                    height: ($baseline*2.45);
+                    height: auto;
                 }
             }
         }
