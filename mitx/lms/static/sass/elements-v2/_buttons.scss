@@ -19,8 +19,39 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
     }
 }
 
+.btn-outline-primary {
+    background: $white;
+    border-color: $primary;
+    color: $primary;
+
+    &:hover {
+        background: $primary;
+        border-color: $primary;
+        color: $white;
+    }
+}
+
 .btn-primary {
     @extend .btn-brand;
+    background-color: $primary;
+    border-color: $primary;
+    border-radius: $border-radius;
+    color: $white;
+    font-size: 14px;
+
+    &:hover {
+        background-color: $white;
+        border-color: $primary;
+        color: $primary;
+    }
+}
+
+.btn-link {
+    color: $primary;
+
+    &:hover {
+        color: darken($primary, 5%);
+    }
 }
 
 .btn-upgrade {

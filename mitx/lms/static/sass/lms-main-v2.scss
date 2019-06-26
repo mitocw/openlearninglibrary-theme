@@ -38,6 +38,7 @@ $pattern-library-path: '../../edx-pattern-library' !default;
 @import 'course/course-about';
 @import 'course/course-details';
 @import 'course/course-sidebar';
+@import 'course/layout/courseware_preview';
 
 // multicourse
 @import 'multicourse/dashboard';
@@ -45,6 +46,9 @@ $pattern-library-path: '../../edx-pattern-library' !default;
 // Views
 @import 'views/account-settings';
 @import 'views/login-register';
+@import 'views/tos';
+@import 'views/about';
+@import 'views/privacy';
 
 // Features
 @import 'features/learner-profile';

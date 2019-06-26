@@ -45,9 +45,9 @@ from six import text_type
   <div class="secondary">
     <div>
       <ul class="custom-nav mobile-nav-item hidden-mobile nav-item">
-          <li><a href="${marketing_link('COURSES')}">Courses</a></li>
-          <li><a href="javascript:void(0);">About</a></li>
-          <li><a href="javascript:void(0);">Contact</a></li>
+          <li><a href="${marketing_link('COURSES')}">${_("Courses")}</a></li>
+          <li><a href="${marketing_link('ABOUT')}">${_("About")}</a></li>
+          <li><a href="${marketing_link('CONTACT')}">${_("Contact")}</a></li>
       </ul>
       % if allows_login:
         % if restrict_enroll_for_course:

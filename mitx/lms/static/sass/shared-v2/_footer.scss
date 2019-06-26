@@ -6,8 +6,8 @@
     @include padding($baseline*2, 0, 0, 0);
 
     .view-in-course & {
-        @include padding-left(0);
-        @include padding-right(0);
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     footer {

@@ -55,6 +55,10 @@ body.view-in-course .content-wrapper,
 
     .container {
         @include padding($baseline*3, $baseline*0.75, $baseline*5, $baseline*0.75);
+
+        .view-progress & {
+            padding: 0;
+        }
     }
 }
 

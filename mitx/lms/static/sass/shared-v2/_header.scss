@@ -22,13 +22,15 @@
         }
 
         .main {
-            @include margin(0, 0, 0, $baseline*4);
+            @include media-up(xl) {
+                @include margin(0, 0, 0, $baseline*4);
+            }
 
             .nav-item {
 
                 &.nav-tab {
                     @include padding(0, $baseline*0.75, 0, $baseline*0.75);
-                    @include media-up(md) {
+                    @include media-up(lg) {
                         font-size: 20px;
                         @include padding(0, $baseline, 0, $baseline);
                     }
@@ -280,6 +282,9 @@
         display: block;
         margin: 0;
         @include text-align(left);
+        @include media-up(sm) {
+            min-width: 300px;
+        }
         @include media-up(md) {
             display: table;
         }
