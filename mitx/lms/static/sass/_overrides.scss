@@ -68,3 +68,11 @@
 // ------------------------------
 // #SHAME
 // ------------------------------
+.wrapper-account-settings .account-settings-container .account-settings-sections .section .account-settings-section-body .u-field {
+    padding: $baseline 0 $baseline*0.5 !important;
+}
+
+.account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-date,
+.account-settings-sections .section .account-settings-section-body .u-field .u-field-order-lines .u-field-order-date {
+    width: 30%;
+}

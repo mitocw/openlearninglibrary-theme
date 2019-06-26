@@ -45,7 +45,9 @@
 
                     .course {
                         position: relative;
-                        @include padding-left(240px);
+                        @include media-up(sm) {
+                            @include padding-left(240px);
+                        }
 
                         .wrapper-course-image {
                             position: absolute;
