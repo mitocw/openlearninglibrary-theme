@@ -1,6 +1,7 @@
 .wrapper-footer {
-    box-shadow: none;
     background: $navy;
+    box-shadow: none;
+    border: none;
     color: $white;
     position: relative;
     @include padding($baseline*2, 0, 0, 0);
@@ -140,4 +141,8 @@
 .wrapper-footer footer#footer-openedx .copyright,
 .wrapper-footer footer#footer-openedx .colophon .nav-colophon li a {
 	color: $white;
+
+    &:hover {
+        text-decoration: none;
+    }
 }

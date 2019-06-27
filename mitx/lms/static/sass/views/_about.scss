@@ -2,9 +2,12 @@
 // lms - views - About
 // =================================
 .page-banner {
+    background-image: url('#{$static-path}/images/banner-about-page.jpg');
     background-size: cover;
     background-position: 50% 50%;
     margin-bottom: $baseline*1.25;
+    position: relative;
+    z-index: 1;
 
     .container {
         padding-top: 0;
@@ -24,9 +27,21 @@
         margin: 0;
         color: $white;
         font-size: 40px;
+        font-weight: normal;
         margin: 0 0 35px;
         letter-spacing: 0.4px;
         @include text-align(left);
+    }
+
+    &:before {
+        content: '';
+        background: rgba($navy, 0.6);
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 }
 
@@ -37,6 +52,9 @@
         @include media-up(sm) {
             flex: 0 0 60%;
         }
+        @include media-up(md) {
+            flex: 0 0 75%;
+        }
 
         .text-1 {
             font-size: 18px;
@@ -45,7 +63,7 @@
             @include media-up(sm) {
                 font-size: 22px;
                 line-height: 36px;
-                margin-bottom: $baseline*2;
+                margin-bottom: $baseline*1.5;
             }
         }
     }
@@ -56,16 +74,8 @@
         margin-bottom: $baseline;
         @include media-up(sm) {
             font-size: 18px;
-            line-height: 32px;
-            margin-bottom: $baseline*1.5;
-        }
-    }
-
-    a {
-        color: $secondary;
-
-        &:hover {
-        color: $primary;
+            line-height: 28px;
+            margin-bottom: $baseline;
         }
     }
 
@@ -73,6 +83,70 @@
         @include margin-left(auto);
         @include media-up(sm) {
             flex: 0 0 40%;
+            @include text-align(right);
+        }
+        @include media-up(md) {
+            flex: 0 0 25%;
+        }
+    }
+}
+
+.socialmedia-list {
+    border-bottom: 1px solid $light-blue-gray !important;
+    list-style: none;
+    padding: 0 0 $baseline !important;
+    @include media-up(sm) {
+        @include float(right);
+    }
+
+    .socialmedia-list-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        @include margin-right($baseline*0.5);
+
+        a:not(.btn) {
+            border: 1px solid $light-blue-gray;
+            border-radius: 50%;
+            color: $light-blue-gray;
+            display: block;
+            font-size: 22px;
+            height: 44px;
+            width: 44px;
+            line-height: 44px;
+            text-align: center;
+            @include transition(all 0.3s);
+
+            &:hover { background-color: rgba($ice-blue, 0.3); }
+
+            &.twitter:hover {
+                color: $twitter;
+                border-color: $twitter;
+            }
+
+            &.facebook:hover {
+                color: $facebook;
+                border-color: $facebook;
+            }
+
+            &.linkedin:hover {
+                color: $linkedin;
+                border-color: $linkedin;
+            }
+
+            &.google:hover {
+                color: $google;
+                border-color: $google;
+            }
+
+            &.instagram:hover {
+                color: $instagram;
+                border-color: $instagram;
+            }
+        }
+
+        &:last-child {
+            @include margin-right(0);
         }
     }
 }
@@ -82,18 +156,65 @@
 
     h1 {
         font-size: 25px;
+        font-weight: normal;
         @include text-align(left);
     }
 }
 
-.accordion {
+.faq-section {
+    margin-top: $baseline*5;
 
-    .item {
-        .accordion-content {
-            @include padding-left($baseline*1.05);
+    .section-title {
+        border-bottom: 2px solid $blue-gray-70;
+        font-size: 28px;
+        font-weight: normal;
+        @include margin(0, 0, $baseline*2, 0);
+        @include padding(0, 0, $baseline*0.5, 0);
+    }
 
-            p {
-                margin: 0 0 $baseline*1.25;
+    .btn {
+        background: transparent;
+        border-color: $primary;
+        border-radius: $border-radius;
+        color: $primary;
+        font-size: 14px;
+        height: 40px;
+        width: 200px;
+        text-align: center;
+        @include margin-right($baseline*0.6);
+        @include padding($baseline*0.25, $baseline, $baseline*0.25, $baseline);
+
+
+        &:hover {
+            background: $primary;
+            color: $white;
+        }
+
+        + .btn {
+            border-color: #e0e0e0;
+        }
+    }
+
+    .accordion {
+
+        .item {
+
+            .accordion-title,
+            .accordion-content p {
+                font-size: 16px;
+                line-height: normal;
+                @include media-up(sm) {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+
+            .accordion-title {
+                font-weight: 600;
+            }
+
+            .accordion-content p {
+                margin: 0 0 $baseline;
             }
         }
     }
