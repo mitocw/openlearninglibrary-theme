@@ -79,20 +79,24 @@ var periodicCaller = function () {
             postRender();
         }
     });
-}
+};
 
 
 var updateRegisterTermsOfServiceText = function () {
-    $("#register .plaintext-field a").text(function () {
+    $("body #register .plaintext-field a").text(function () {
         return $(this).text().replace('Terms of Service and Honor Code', 'Terms of Service');
     });
-}
+};
 
 
 window.onload = function () {
     periodicCaller();
     updateRegisterTermsOfServiceText();
-}
+
+    $("body a.form-toggle").click(function() {
+        updateRegisterTermsOfServiceText();
+    });
+};
 
 $(document).on('click', function(event) {
     if(event.target.nodeName == 'A' || event.target.nodeName == 'BUTTON'){
