@@ -241,6 +241,14 @@
                 top: 0;
                 bottom: 0;
                 margin: auto;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                @include transition(all 0.2s);
+            }
+
+            &.active:after {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
             }
 
             &:hover {
