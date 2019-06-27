@@ -23,15 +23,11 @@
     <div class="colophon">
       <nav class="nav-colophon" aria-label="${_('About')}">
         <ol>
-            <li class="list-title">${_("MITx")}</li>
-            % for item_num, link in enumerate(footer['navigation_links'], start=1):
-            <li class="nav-colophon-0${item_num}">
-              <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-            </li>
-            % endfor
-            <li>
-              <a href="mailto: mitoll-support@mit.edu">${_("Help")}</a>
-            </li>
+          <li class="list-title">${_("MITx")}</li>
+          <li><a href="${marketing_link('ABOUT')}">${_("About")}</a></li>
+          <li><a href="${marketing_link('COURSES')}">${_("Courses")}</a></li>
+          <li><a href="${marketing_link('DONATE')}">${_("Donate")}</a></li>
+          <li><a href="mailto: mitoll-support@mit.edu">${_("Help")}</a></li>
         </ol>
         <ul>
           <li class="list-title">${_("Connect")}</li>
@@ -63,7 +59,6 @@
               <a href="${link['url']}">${link['title']}</a>
             </li>
           % endfor
-          <li><a href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a></li>
         </ul>
       </nav>
       <p class="copyright">&copy; ${datetime.now(pytz.timezone(settings.TIME_ZONE)).year}. ${_("MITx Ltd")}</p>

@@ -6,7 +6,7 @@ $(document).ready(function() {
         }, 800);
     });
 
-    var autoHeight = $('body').hasClass('auto-height');
+    var autoHeight = $('.auto-height').length > 0;
     if(autoHeight) {
         $('html, body').css({
             'height': 'auto'
