@@ -54,7 +54,7 @@
     <div class="container">
       <nav class="nav-legal" aria-label="${_('Legal')}">
         <ul class="list-inline">
-          % for item_num, link in enumerate(footer['legal_links'], start=1):
+          % for item_num, link in enumerate(footer['legal_links'][:-1], start=1):
             <li class="nav-legal-0${item_num}">
               <a href="${link['url']}">${link['title']}</a>
             </li>
