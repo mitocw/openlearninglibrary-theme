@@ -82,8 +82,16 @@ var periodicCaller = function () {
 }
 
 
+var updateRegisterTermsOfServiceText = function () {
+    $("#register .plaintext-field a").text(function () {
+        return $(this).text().replace('Terms of Service and Honor Code', 'Terms of Service');
+    });
+}
+
+
 window.onload = function () {
     periodicCaller();
+    updateRegisterTermsOfServiceText();
 }
 
 $(document).on('click', function(event) {
