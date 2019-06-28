@@ -71,6 +71,14 @@ body.view-in-course .content-wrapper,
     background: $body-bg;
 }
 
+hr {
+    border-color: rgba($light-blue-gray, .7);
+    margin: $baseline 0;
+    @include media-up(sm) {
+        margin: $baseline*2 0;
+    }
+}
+
 a {
     color: $secondary;
 
