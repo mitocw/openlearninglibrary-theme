@@ -1,0 +1,50 @@
+// =================================
+// lms - views - Contact Us
+// =================================
+.contact-page-banner {
+    background-image: url('#{$static-path}/images/banner-contact-page.jpg');
+    background-position: center -120px;
+}
+
+.contact-page-content {
+
+    .btn {
+        background: transparent;
+        border-color: $primary;
+        border-radius: $border-radius;
+        color: $primary;
+        font-size: 14px;
+        min-width: 200px;
+        height: 40px;
+        line-height: normal;
+        text-align: center;
+        @include margin-right($baseline*0.6);
+
+        &:hover {
+            background: $primary;
+            color: $white;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: normal;
+        margin-bottom: $baseline;
+        @include media-up(sm) {
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: $baseline;
+        }
+    }
+}
+
+.btn-container {
+    margin: $baseline*1.5 0;
+
+    .btn {
+
+        + .btn {
+            border-color: #e0e0e0;
+        }
+    }
+}
