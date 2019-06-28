@@ -77,13 +77,19 @@ var periodicCaller = function () {
         if ($("label").length) {
             clearInterval(interval);
             postRender();
+
+            // Update "Terms of Service" text on logistration forms
+            updateRegisterTermsOfServiceText();
+            $("body a.form-toggle").click(function() {
+                updateRegisterTermsOfServiceText();
+            });
         }
     });
 };
 
 
 var updateRegisterTermsOfServiceText = function () {
-    $("body #register .plaintext-field a").text(function () {
+    $("body #register .plaintext-field a").first().text(function () {
         return $(this).text().replace('Terms of Service and Honor Code', 'Terms of Service');
     });
 };
@@ -91,11 +97,6 @@ var updateRegisterTermsOfServiceText = function () {
 
 window.onload = function () {
     periodicCaller();
-    updateRegisterTermsOfServiceText();
-
-    $("body a.form-toggle").click(function() {
-        updateRegisterTermsOfServiceText();
-    });
 };
 
 $(document).on('click', function(event) {
