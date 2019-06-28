@@ -6,7 +6,7 @@
     .content-wrapper {
         background-image: url('#{$static-path}/images/bg-login-register.jpg');
         background-color: $navy;
-        background-position: center -140px;
+        background-position: center center;
         background-repeat: no-repeat;
 
         &:after {

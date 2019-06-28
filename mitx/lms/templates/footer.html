@@ -23,7 +23,7 @@
     <div class="colophon">
       <nav class="nav-colophon" aria-label="${_('About')}">
         <ol>
-          <li class="list-title">${_("MITx")}</li>
+          <li class="list-title">${_("Open Learning Library")}</li>
           <li><a href="${marketing_link('ABOUT')}">${_("About")}</a></li>
           <li><a href="${marketing_link('COURSES')}">${_("Courses")}</a></li>
           <li><a target="_blank" href="${marketing_link('DONATE')}">${_("Donate")}</a></li>
@@ -61,7 +61,7 @@
           % endfor
         </ul>
       </nav>
-      <p class="copyright">&copy; ${datetime.now(pytz.timezone(settings.TIME_ZONE)).year}. ${_("MITx Ltd")}</p>
+      <p class="copyright">&copy; ${_("Massachusetts Institute of Technology,")} ${datetime.now(pytz.timezone(settings.TIME_ZONE)).year}</p>
     </div>
   </footer>
 </div>
