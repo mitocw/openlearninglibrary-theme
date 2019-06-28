@@ -1,0 +1,268 @@
+.access-on-edx {
+    background: $light-blue-gray-50;
+    @include padding($baseline*1.25, $baseline*1.25, $baseline*1.25, $baseline*1.25);
+
+    .btn {
+        font-size: 16px !important;
+        width: 220px;
+        height: 50px;
+        text-align: center;
+        @include float(right);
+        padding: ($baseline*0.5) !important;
+    }
+
+    p {
+        font-weight: 600;
+        line-height: 28px !important;
+        letter-spacing: 0.5px;
+        overflow: hidden;
+        margin: 0 !important;
+        @include media-up(sm) {
+            @include padding-right($baseline);
+        }
+    }
+}
+
+.content-wrapper {
+
+    .course-info {
+
+        .details {
+            @include media-up(md) {
+                width: 58.3333333333%;
+                font-size: 18px;
+            }
+
+            .btn {
+                background: transparent;
+                border-color: $primary;
+                border-radius: $border-radius;
+                color: $primary;
+                font-size: 14px;
+                width: 200px;
+                text-align: center;
+                @include margin-right($baseline*0.6);
+                @include padding($baseline*0.25, $baseline, $baseline*0.25, $baseline);
+
+
+                &:hover {
+                    background: $primary;
+                    color: $white;
+                }
+
+                + .btn {
+                    border-color: #e0e0e0;
+                }
+            }
+
+            section {
+                @include margin(0, 0, $baseline*3.5, 0);
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    font-weight: normal !important;
+
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+
+                h1 { font-size: 40px; }
+
+                h2 { font-size: 36px; }
+
+                h3 {
+                    font-size: 32px;
+                    letter-spacing: 0.28px;
+                    @include margin($baseline*4, 0, $baseline*1, 0);
+                }
+
+                h4 { font-size: 26px; }
+
+                h5 { font-size: 22px; }
+
+                h6 { font-size: 18px; }
+
+                p {
+                    font-size: 18px;
+                    line-height: 32px;
+                    letter-spacing: 0.5px;
+                    @include margin(0, 0, $baseline, 0);
+                }
+            }
+
+            .list-title {
+                border-bottom: 2px solid $blue-gray-70;
+                font-weight: 600;
+                @include margin(0, 0, $baseline*1, 0);
+                @include padding(0, 0, $baseline*0.5, 0);
+            }
+
+            ul,
+            ol {
+                @include margin(0, 0, $baseline*2, 0);
+                @include padding(0, 0, 0, $baseline);
+
+                li {
+                    padding: 0;
+                    @include margin(0, 0, $baseline*0.5, 0);
+                }
+            }
+
+            .course-staff {
+
+                h2 {
+                    margin-top: 70px;
+                }
+
+                .teacher {
+                    min-height: 160px;
+                    position: relative;
+                    @include padding-left($baseline*9);
+
+                    .teacher-image {
+                        border: none;
+                        border-radius: 50%;
+                        height: 160px;
+                        width: 160px;
+                        overflow: hidden;;
+                        @include float(left);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+
+                        img {
+                            border-radius: 50%;
+                            height: 160px;
+                            width: 160px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 700 !important;
+                        @include margin($baseline*0.25, 0, 0, 0);
+
+                        + p {
+                            @include margin(0, 0, $baseline*0.5, 0);
+                        }
+                    }
+
+                    p {
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.instructors-list {
+    @include margin($baseline*3, 0, $baseline*3, 0);
+
+    .instructors-list-item {
+        @include margin(0, 0, $baseline*1.5, 0);
+
+        figure {
+            border: none;
+            border-radius: 50%;
+            height: 160px;
+            overflow: hidden;;
+            width: 160px;
+            @include float(left);
+
+
+            img {
+                border-radius: 50%;
+                height: 160px;
+                width: 160px;
+                object-fit: cover;
+            }
+        }
+
+        .instructor-about {
+            overflow: hidden;
+            @include padding(0, 0, 0, $baseline*1.5);
+
+            .instructor-name,
+            .instructor-designation,
+            .instructor-info {
+                font-size: 18px;
+                letter-spacing: 0.5;
+                line-height: 25px;
+            }
+
+            .instructor-name {
+                font-weight: 700 !important;
+                @include margin($baseline*0.25, 0, 0, 0);
+            }
+
+            .instructor-designation {
+                @include margin(0, 0, $baseline*0.5, 0);
+            }
+
+            .instructor-info {
+                line-height: 32px;
+            }
+        }
+    }
+}
+
+
+
+// Accordion
+.accordion {
+    position: relative;
+    border-bottom: 1px solid $light-blue-gray-70;
+    @include margin($baseline*2, 0, $baseline*2, 0);
+
+    .item {
+
+        .accordion-title {
+            position: relative;
+            border-top: 1px solid $light-blue-gray-70;
+            @include padding($baseline*0.75, $baseline, $baseline*0.75, 0);
+
+            &:after {
+                content: '';
+                width: 20px;
+                height: 14px;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTEyIDEzLjU4Nkw2LjcwNyA4LjI5M2ExIDEgMCAwIDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAgMCAxLjQxNCAwbDYtNmExIDEgMCAxIDAtMS40MTQtMS40MTRMMTIgMTMuNTg2eiIvPgogICAgICAgIDxwYXRoIGlkPSJjIiBkPSJNMTMuNTg2IDEybC01LjI5MyA1LjI5M2ExIDEgMCAwIDAgMS40MTQgMS40MTRsNi02YTEgMSAwIDAgMCAwLTEuNDE0bC02LTZhMSAxIDAgMCAwLTEuNDE0IDEuNDE0TDEzLjU4NiAxMnoiLz4KICAgIDwvZGVmcz4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPgogICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+CiAgICAgICAgPC9tYXNrPgogICAgICAgIDx1c2UgZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjYSIvPgogICAgICAgIDxnIGZpbGw9IiMwMDAiIG1hc2s9InVybCgjYikiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6Ii8+CiAgICAgICAgPC9nPgogICAgICAgIDxnIG1hc2s9InVybCgjYikiPgogICAgICAgICAgICA8bWFzayBpZD0iZCIgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNjIi8+CiAgICAgICAgICAgIDwvbWFzaz4KICAgICAgICAgICAgPHVzZSBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNjIi8+CiAgICAgICAgICAgIDxnIGZpbGw9IiMwMDAiIG1hc2s9InVybCgjZCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                @include transition(all 0.2s);
+            }
+
+            &.active:after {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            &:hover {
+                color: $primary;
+                cursor: pointer;
+            }
+        }
+
+        .accordion-content {
+            display: none;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

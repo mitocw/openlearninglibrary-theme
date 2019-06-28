@@ -1,0 +1,424 @@
+// lms - application - learner profile
+// ====================
+.view-profile {
+
+    .wrapper-profile {
+        background: $body-bg;
+
+        .profile {
+
+            .container {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .wrapper-profile-field-account-privacy,
+            .profile-header,
+            .wrapper-profile-sections {
+                background: transparent;
+                border: none;
+                @include margin-left(auto);
+                @include margin-right(auto);
+                @include padding-left( ($baseline*0.75) );
+                @include padding-right( ($baseline*0.75) );
+                max-width: $container-default;
+            }
+
+            .profile-visibility-bar {
+                background-color: rgba($navy, 0.8);
+                padding: $baseline*0.3;
+
+                .wrapper-profile-field-account-privacy {
+
+                    label,
+                    .u-field-value {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+
+                    label {
+                        color: $light-gray-blue;
+                        font-size: 18px;
+                        font-weight: normal;
+                        letter-spacing: 0.5px;
+                        @include margin-right(5px);
+                    }
+
+                    .u-field-value {
+                        min-width: 235px;
+
+                        select {
+                            height: 40px;
+
+                            &:disabled {
+                                opacity: .5;
+                            }
+                        }
+                    }
+
+                    .btn-change-privacy,
+                    .profile-records-button {
+                        background: $primary;
+                        border-color: $primary;
+                        border-radius: $border-radius;
+                        font-family: $font-roboto;
+                        font-size: 14px;
+                        font-weight: 500;
+                        height: 40px;
+                        line-height: normal;
+
+                        &:hover {
+                            background: $white;
+                            border-color: $primary;
+                            color: $primary;
+                        }
+                    }
+
+                    .profile-records-button {
+                        min-width: 200px;
+                        @include margin-left($baseline/4);
+                    }
+
+                    .u-field-message {
+
+                        .u-field-message-notification {
+                            color: $light-gray-blue;
+
+                            a {
+                                color: $white;
+                                @include margin-left(2px);
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .profile-header-container {
+
+                .profile-header {
+                    background: $white;
+                    padding-top: $baseline*1.5;
+                    padding-bottom: $baseline*1.5;
+
+                    .header {
+                        color: $charcoal-gray;
+                        font-weight: 600;
+                        font-size: 26px;
+                        letter-spacing: 0.23px;
+                    }
+
+                    .subheader {
+                        font-size: 18px;
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+
+            .profile-sections-container {
+                background: $ice-blue;
+                padding: $baseline*5 0;
+
+                .wrapper-profile-sections {
+                    padding-top: 0;
+                    padding-bottom: 0;
+
+                    .wrapper-profile-section-container-one {
+                        @include media-up(sm) {
+                            @include padding-right($baseline*0.75);
+                            @include margin-right($baseline*0.75);
+                            width: 35%;
+                        }
+
+                        .wrapper-profile-section-one {
+                            border: none;
+                            width: auto;
+                            @include padding(0, $baseline*2, $baseline*1.75, $baseline*2);
+
+                            .profile-image-field {
+
+                                .u-field-image {
+                                    padding: 0;
+                                    margin-bottom: $baseline;
+
+                                    .image-wrapper {
+                                        width: 90px;
+                                        @include media-up(sm) {
+                                            width: 120px;
+                                        }
+                                        @include media-up(md) {
+                                            width: 190px;
+                                        }
+
+                                        .image-frame {
+                                            border: 1px solid $light-blue-gray;
+                                            border-radius: 50%;
+                                            height: 90px;
+                                            width: 90px;
+                                            @include media-up(sm) {
+                                                margin-top: -($baseline*1.1);
+                                                height: 120px;
+                                                width: 120px;
+                                            }
+                                            @include media-up(md) {
+                                                height: 190px;
+                                                width: 190px;
+                                            }
+                                        }
+
+                                        .u-field-actions {
+
+                                            .u-field-upload-button {
+                                                height: 90px;
+                                                width: 90px;
+                                                border-radius: 50%;
+                                                @include media-up(sm) {
+                                                    height: 120px;
+                                                    width: 120px;
+                                                }
+                                                @include media-up(md) {
+                                                    height: 190px;
+                                                    width: 190px;
+                                                }
+                                            }
+
+                                            .upload-button-input {
+                                                width: 90px;
+                                                @include media-up(sm) {
+                                                    width: 120px;
+                                                }
+                                                @include media-up(md) {
+                                                    width: 190px;
+                                                }
+                                            }
+
+                                            .u-field-remove-button {
+                                                margin: auto;
+                                                text-align: center;
+                                                padding-top: $baseline*0.4;
+
+                                                &:hover {
+                                                    color: $primary;
+                                                }
+
+                                                &:focus {
+                                                    color: $primary;
+                                                    outline: none;
+                                                    box-shadow: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .profile-section-one-fields {
+                                margin: 0;
+
+                                .u-field {
+
+                                    &.u-field-name {
+
+                                        .u-field-value {
+                                            color: $charcoal-gray;
+                                            font-size: 26px;
+                                            font-weight: 600;
+                                            letter-spacing: 0.23px;
+                                        }
+                                    }
+
+                                    &.u-field-username {
+                                        border-bottom: 1px solid $light-blue-gray;
+                                        padding-bottom: $baseline;
+
+                                        .u-field-value {
+                                            color: $charcoal-gray;
+                                            font-size: 18px;
+                                        }
+                                    }
+
+                                    &.u-field-date_joined {
+                                        border: 1px solid $light-blue-gray;
+                                        margin-bottom: $baseline*0.5;
+                                        padding-bottom: $baseline*0.5;
+
+                                        .u-field-value {
+                                            color: $charcoal-gray;
+                                            font-size: 18px;
+                                        }
+
+                                        &:hover {
+                                            cursor: default !important;
+                                            background: transparent !important;
+                                        }
+                                    }
+                                }
+
+                                .u-field:not(.u-field-name):not(.u-field-username) {
+                                    border-width: 0 0 1px;
+                                    border-style: solid;
+                                    border-color: $light-blue-gray;
+                                    border-radius: 0;
+                                    margin: 0;
+                                    padding: $baseline $baseline*0.5;
+                                    position: relative;
+                                    @include transition(all 0.3s);
+
+                                    .u-field-title,
+                                    .u-field-value-readonly {
+                                        color: $charcoal-gray;
+                                        letter-spacing: 0.5px;
+                                        line-height: normal;
+                                    }
+
+                                    .u-field-title {
+                                        font-size: 18px;
+                                        margin-bottom: $baseline*0.25;
+                                    }
+
+                                    .u-field-value {
+                                        width: 100%;
+                                    }
+
+                                    .u-field-value-display {
+                                        @include text-align(left);
+                                    }
+
+                                    .u-field-value-readonly {
+                                        font-size: 20px;
+                                        font-weight: 600;
+                                    }
+
+                                    .fa {
+                                        right: $baseline*0.75;
+                                        top: $baseline*0.5;
+                                    }
+
+                                    &:hover {
+                                        background: $danger-light;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .wrapper-profile-section-container-two {
+                        padding: 0;
+                        @include clearfix;
+                        @include media-up(sm) {
+                            display: flex;
+                            flex-direction: row;
+                            width: 65%;
+                        }
+
+                        &.is-hidden {
+                            display: none;
+                        }
+
+                        .wrapper-profile-bio,
+                        .learner-achievements-container {
+                            background: $white;
+                            height: 100%;
+                            @include media-up(sm) {
+                                flex: 1;
+                            }
+
+                            .u-field-title {
+                                border-bottom: 1px solid $light-blue-gray;
+                                padding-bottom: $baseline;
+                                margin-bottom: $baseline;
+                                color: $charcoal-gray;
+                                font-weight: 600;
+                                font-size: 26px;
+                                letter-spacing: 0.23px;
+                            }
+                        }
+
+                        .wrapper-profile-bio {
+
+                            .wrapper-profile-section-two {
+                                @include clearfix;
+                                padding: $baseline*1.25;
+
+                                .wrapper-u-field {
+
+                                    .fa {
+                                        @include margin-left(0);
+                                        @include margin-right($baseline*0.5);
+                                    }
+
+                                    .u-field-value-readonly {
+                                        color: $charcoal-gray !important;
+                                        font-size: 18px;
+                                        line-height: 32px;
+                                        letter-spacing: 0.5px;
+                                    }
+
+                                    .u-field-value,
+                                    .u-field-footer {
+                                        @include clearfix;
+                                    }
+                                }
+
+                                .clickable {
+
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+
+                                .u-field {
+                                    margin: 0;
+                                    padding: $baseline*0.75;
+                                    @include transition(all 0.3s);
+                                }
+                            }
+                        }
+
+                        .learner-achievements-container {
+                            @include margin-left($baseline*0.75);
+
+                            .learner-achievements {
+                                @include clearfix;
+                                padding: $baseline*2;
+
+                                .learner-message {
+                                    background-color: transparent;
+                                    box-shadow: none;
+                                    color: $charcoal-gray;
+                                    margin: 0;
+                                    padding: 0;
+                                    @include text-align(left);
+
+                                    .message-actions {
+                                        @include text-align(left);
+
+                                        .btn-brand {
+                                            background: $primary;
+                                            border-color: $primary;
+                                            border-radius: $border-radius;
+                                            font-family: $font-roboto;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            height: 40px;
+                                            line-height: normal;
+
+                                            .fa {
+                                                @include margin-right($baseline*0.25);
+                                            }
+
+                                            &:hover {
+                                                background: darken($primary, 5%);
+                                                border-color: darken($primary, 5%);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+//
+// Theme colors
+//
+// Note: define colors needed by your theme first
+
+// Define your theme's base color
+$rouge:                 #a31f34;
+
+// Make your theme's base color as primary color
+$primary:               $rouge;
+$secondary:             #1e7be2;
+
+// Overrides variables
+$body-bg:               transparent;
+$form-bg-color:         #ffffff;
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+
+// Initialize the Open edX Bootstrap theme
+@import 'edx-bootstrap/sass/open-edx/theme';
+
+// --------------------------------------------------------
+// THEME's variables
+// --------------------------------------------------------
+// Fonts
+$font-roboto:           'Roboto', sans-serif;
+$font-source-sans-pro:  'Source Sans Pro', sans-serif;
+
+// Colors
+$deep-sky-blue:         $secondary;
+$gray-mid:              #b0b0b0;
+$gray-lightest:         #f2f2f2;
+$gray-pale:             #f4f6fa;
+$light-gray-blue:       #b0bec5;
+$charcoal-gray:         #37474f;
+$navy:                  #03152d;
+$navy-30:               rgba(3, 21, 45, 0.30);
+$navy-50-solid:         #697683;
+$navy-80:               rgba(3, 21, 45, 0.80);
+$navy-90:               rgba(3, 21, 45, 0.90);
+$navy-90-solid:         #1d2c42;
+$light-blue-gray:       #cfd8dc;
+$light-blue-gray-50:    rgba(207, 216, 220, .50);
+$light-blue-gray-70:    rgba(207, 216, 220, .70);
+$blue-gray:             #78909c;
+$bluey-gray:            #90a4ae;
+$blue-gray-70:          rgba(144, 164, 174, 0.70);
+$ice-blue:              #eceff1;
+$ice-blue-60:           rgba(236, 239, 241, 0.6);
+$ice-blue-60-solid:     #f4f5f7;
+$tomato:               	#ee2d2d;
+$danger:               	$tomato;
+$danger-light:          #f6e9eb;
+$success:               #008100;
+
+//
+// Social media
+//-------------------------------------------------------
+$facebook:                   #3B5998;
+$twitter:                    #00ACED;
+$linkedin:                   #007BB5;
+$google:                     #DD4B39;
+$instagram:                  #517FA4;
+
+// Misc.
+$border-radius:         4px;
+$container-default:     1170px;

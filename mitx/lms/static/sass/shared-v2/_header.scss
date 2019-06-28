@@ -1,0 +1,444 @@
+.global-header {
+    box-shadow: none;
+    position: relative;
+    z-index: 100;
+    border-bottom-color: $light-blue-gray;
+    @include padding(($baseline*0.5), 0, ($baseline*0.5), 0);
+    @include media-up(sm) {
+        overflow: visible;
+        @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
+    }
+
+    .nav-links {
+        @include media-up(md) {
+            width: 80%;
+            @include padding($baseline*0.75, 0, $baseline*0.75, 0);
+        }
+
+        .is-authenticated & {
+            @include media-up(md) {
+                @include padding($baseline*0.65, 0, $baseline*0.65, 0);
+            }
+        }
+
+        .main {
+            @include media-up(md) {
+                @include margin(0, 0, 0, $baseline);
+            }
+            @include media-up(xl) {
+                @include margin(0, 0, 0, $baseline*4);
+            }
+
+            .nav-item {
+
+                &.nav-tab {
+                    @include padding(0, $baseline*0.75, 0, $baseline*0.75);
+                    @include media-up(lg) {
+                        font-size: 20px;
+                        @include padding(0, $baseline, 0, $baseline);
+                    }
+
+                    .tab-nav-link {
+                        border-width: 2px;
+                        color: $charcoal-gray;
+                        @include padding($baseline*0.2, 0, $baseline*0.5, 0);
+                    }
+                }
+            }
+        }
+
+        .secondary {
+            margin: 0;
+
+            .nav-item {
+                padding: 0;
+                vertical-align: middle;
+
+                .help-link {
+                    font-size: 20px;
+                    color: $light-gray-blue;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+                &.nav-item-dropdown {
+                    position: relative;
+
+                    .toggle-user-dropdown {
+                        background: $ice-blue-60;
+                        border-radius: $border-radius;
+                        @include padding($baseline*0.25, $baseline*0.7, $baseline*0.25, $baseline*0.7);
+
+                        .username,
+                        .user-image-frame {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        .username {
+                            color: $primary;
+                            font-family: $font-roboto;
+                            font-weight: 500;
+                            @include margin-right($baseline*1.3);
+                        }
+
+                        .user-image-frame {
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin: 0;
+                            width: 30px;
+                            height: 30px;
+                            border: none;
+
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+
+                    .dropdown-user-menu {
+                        border: none;
+                        background: $ice-blue-60-solid;
+                        border-radius: $border-radius;
+                        width: 100%;
+                        min-width: 175px;
+                        overflow: hidden;
+                        right: 0;
+                        top: calc(100% + 5px);
+                        box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+                        -webkit-box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+                        -moz-box-shadow: 0 1px 5px -1px rgba(0, 0, 0, .3);
+
+                        .dropdown-nav-item {
+
+                            &:hover {
+                                background-color: $ice-blue;
+
+                                a {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.custom-nav {
+                    padding: 0;
+                    list-style: none;
+                    font-size: 0; //to remove white space between inline HTML elements, and child must have font-size
+                    @include margin-left(0);
+                    @include media-up(md) {
+                        display: inline-block;
+                    }
+                    @include media-up(lg) {
+                        @include margin-right($baseline*0.8);
+                    }
+
+                    li {
+                        display: inline-block;
+                        margin: 0;
+                        @include padding($baseline*0.25, $baseline*0.6, $baseline*0.25, $baseline*0.6);
+                        @include media-up(md) {
+                            @include padding($baseline*0.25, $baseline*1.1, $baseline*0.25, $baseline*1.1);
+                        }
+
+                        a {
+                            font-size: $baseline;
+                            text-decoration: none;
+                            @include padding($baseline*0.5, 0, $baseline*0.5, 0);
+
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    @include margin-right(-1px);
+                    @include margin-left($baseline*.25);
+                }
+            }
+
+            a {
+
+                &.sign-in-btn,
+                &.register-btn {
+                    font-size: 14px;
+                    font-family: $font-roboto;
+                    font-weight: 500;
+                    @include padding($baseline*0.45, $baseline, $baseline*0.4, $baseline);
+                    text-align: center;
+                }
+
+                &.sign-in-btn {
+                    background-color: $white;
+                    border-color: $primary;
+                    color: $primary;
+                    min-width: $baseline*7;
+                    border-radius: $border-radius;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+                &.register-btn {
+                    background-color: $primary;
+                    border-color: $primary;
+                    color: $white;
+                    border-radius: $border-radius;
+                    @include media-up(lg) {
+                        min-width: $baseline*10;
+                    }
+
+                    &:hover {
+                        background-color: $white;
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-header {
+    @include clearfix;
+    @include padding(0, ($baseline*0.75), 0, ($baseline*0.75));
+    margin: auto;
+    max-width: $container-default;
+    @include media-down(md) {
+        height: auto !important;
+    }
+    @include media-up(md) {
+        display: table;
+        width: 100%;
+    }
+
+    > *:not(.hamburger-menu) {
+        @include media-up(md) {
+            display: table-cell !important;
+            vertical-align: middle;
+        }
+    }
+
+    .hamburger-menu {
+        border: 1px solid transparent;
+        border-radius: 50%;
+        height: 38px;
+        width: 38px;
+        padding: $baseline/4;
+        left: auto;
+        top: $baseline/4;
+        right: $baseline;
+
+        .line {
+            background: $light-gray-blue;
+            height: 2px;
+            width: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            &:nth-child(1) {
+                top: 8px;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 16px;
+            }
+
+            &:nth-child(4) {
+                top: 24px;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.open {
+            border-color: $light-gray-blue;
+
+            .line {
+                width: 20px;
+
+                &.line:nth-child(1) {
+                    left: auto;
+                    right: 50%;
+                }
+            }
+        }
+    }
+
+    .header-logo {
+        display: block;
+        margin: 0;
+        @include text-align(left);
+        @include media-up(sm) {
+            min-width: 300px;
+        }
+        @include media-up(md) {
+            display: table;
+        }
+
+        > * {
+            @include media-up(md) {
+                display: table-cell !important;
+                float: none !important;
+                vertical-align: middle;
+            }
+        }
+
+        a {
+            display: inline-block;
+            float: none;
+            margin: 0;
+            padding-top: 8px;
+            @include media-up(sm) {
+                padding-top: 5px;
+            }
+            @include media-up(md) {
+                padding-top: 0;
+            }
+
+            .logo {
+                margin: 0;
+                height: ($baseline*1.4);
+                @include media-up(sm) {
+                    height: auto;
+                }
+            }
+        }
+
+        .course-header {
+            margin: 0;
+            @include text-align(left);
+            @include padding-left($baseline);
+        }
+    }
+}
+
+.mobile-menu {
+    border-top-color: $light-blue-gray;
+    @include margin($baseline*0.5, 0, -($baseline*0.5), 0);
+
+    .is-authenticated & {
+        padding: $baseline*0.5 0;
+    }
+
+    .mobile-nav-item {
+
+        a {
+            border: none;
+            color: $charcoal-gray;
+            font-size: 20px;
+            font-weight: normal;
+            padding: 0 $baseline*0.75;
+            margin-bottom: $baseline*0.75;
+            @include media-down(sm) {
+                text-align: center;
+            }
+
+            &:hover,
+            &:focus {
+                background: $ice-blue;
+                color: $charcoal-gray;
+            }
+        }
+
+        &.nav-item + .dropdown-item {
+            margin-top: $baseline*0.5;
+            padding-top: $baseline*0.75;
+            position: relative;
+
+            &:before {
+                content: '';
+                background: $ice-blue;
+                margin: auto;
+                height: 1px;
+                position: absolute;
+                left: $baseline*0.75;
+                right: $baseline*0.75;
+                top: 0;
+            }
+        }
+
+        &.custom-nav {
+            margin: 0;
+            padding: $baseline*0.5 0;
+            position: relative;
+
+            &:after {
+                content: '';
+                background: $ice-blue;
+                margin: auto;
+                height: 1px;
+                position: absolute;
+                left: $baseline*0.75;
+                right: $baseline*0.75;
+                bottom: 0;
+            }
+        }
+
+        a {
+
+            &.sign-in-btn,
+            &.register-btn {
+                font-size: 14px;
+                font-family: $font-roboto;
+                font-weight: 500;
+                @include padding($baseline*0.45, $baseline, $baseline*0.4, $baseline);
+                text-align: center;
+            }
+
+            &.sign-in-btn {
+                background-color: $white;
+                border: 1px solid $primary;
+                color: $primary;
+                min-width: $baseline*7;
+                border-radius: $border-radius;
+
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+
+            &.register-btn {
+                background-color: $primary;
+                border-color: $primary;
+                color: $white;
+                min-width: $baseline*10;
+                border-radius: $border-radius;
+
+                &:hover {
+                    background-color: $white;
+                    color: $primary;
+                }
+            }
+
+            &:after {
+                content: none;
+            }
+        }
+
+        &.mobile-pad-item {
+
+            a {
+                max-width: 200px;
+                margin: $baseline*0.75 auto;
+            }
+        }
+    }
+}

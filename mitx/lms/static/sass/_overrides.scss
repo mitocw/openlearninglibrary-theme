@@ -1,0 +1,78 @@
+// ------------------------------
+// About: Additional sass rules that must come at the end of the compilation for overriding purposes - either for temporary/specific developer styling needs or for known poorly scoped/written styling
+//
+
+// #TEMP
+// #DEVELOPERS
+// #SHAME
+
+// ------------------------------
+// #TEMP
+// ------------------------------
+.course-info {
+
+    .details {
+        font-family: $font-family-sans-serif;
+
+        h1, h2, h3, h4, h5, h6,
+        p, span, a {
+            font-family: $font-family-sans-serif;
+        }
+    }
+}
+
+[class^='wrapper'] {
+
+    .view-dashboard & {
+        width: auto;
+    }
+
+    &:after {
+        .view-dashboard & {
+            content: none;
+        }
+    }
+}
+
+.dashboard {
+
+    .side-container {
+        min-width: 500px;
+        max-width: 500px;
+
+        .sidebar-notification {
+
+            .profile-sidebar {
+
+                .user-info {
+
+                    .status-note {
+
+                        strong {
+                            word-break:  break-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------
+// #DEVELOPERS
+// ------------------------------
+.mt0 {
+    margin-top: 0 !important;
+}
+
+// ------------------------------
+// #SHAME
+// ------------------------------
+.wrapper-account-settings .account-settings-container .account-settings-sections .section .account-settings-section-body .u-field {
+    padding: $baseline 0 $baseline*0.5 !important;
+}
+
+.account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-date,
+.account-settings-sections .section .account-settings-section-body .u-field .u-field-order-lines .u-field-order-date {
+    width: 30%;
+}

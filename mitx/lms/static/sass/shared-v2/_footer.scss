@@ -1,0 +1,150 @@
+.wrapper-footer {
+    background: $navy;
+    box-shadow: none;
+    border: none;
+    color: $white;
+    position: relative;
+    @include padding($baseline*2, 0, 0, 0);
+
+    .view-in-course & {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    footer {
+
+        &#footer-openedx {
+            max-width: $container-default;
+            @include padding-left( ($baseline*0.75) );
+            @include padding-right( ($baseline*0.75) );
+
+            .colophon {
+            	margin: 0;
+
+            	.nav-colophon {
+                    width: 100%;
+            		@include margin(0, 0, $baseline*2, 0);
+                    @include media-up(md) {
+                        @include margin(0, 0, $baseline*4.5, 0);
+                    }
+
+            		ol,
+            		ul {
+                        margin-bottom: $baseline*1.5;
+                        @include media-up(sm) {
+                            display: inline-block;
+                            min-width: $baseline*6.25;
+                            vertical-align: top;
+                            margin-bottom: 0;
+                            @include margin-right($baseline*2.5);
+                        }
+
+            			li {
+            				display: block;
+            				float: none;
+            				margin-bottom: $baseline*0.4;
+
+            				a {
+            					font-size: 18px;
+            					line-height: 1.56;
+            					letter-spacing: 0.5px;
+
+            					&:hover {
+            						color: $white;
+            						border-color: $white;
+            					}
+            				}
+
+            				&.list-title {
+            					font-size: 18px;
+            					line-height: 1.56;
+            					letter-spacing: 0.5px;
+            					border-bottom: 1px solid $white;
+                                @include media-up(sm) {
+                                    display: inline-block;
+                                }
+            				}
+
+            				&:last-child {
+            					margin-bottom: 0;
+            				}
+            			}
+            		}
+            	}
+            }
+        }
+
+        &#footer-bottom {
+        	background:$navy-90-solid;
+        	@include padding($baseline, 0, $baseline, 0);
+            text-align: center;
+            @include media-up(sm) {
+                @include text-align(left);
+            }
+
+        	.container {
+                @include clearfix;
+        		@include padding(0, $baseline*0.75, 0, $baseline*0.75);
+        	}
+
+        	.nav-legal {
+                margin-bottom: $baseline;
+        		@include media-up(sm) {
+                    @include float(left);
+                    margin-bottom: 0;
+        		}
+
+        		ul {
+
+        			li {
+                        border-right: 1px solid $white;
+                        @include padding-right($baseline*0.5);
+        				@include margin-right($baseline*0.5);
+                        @include media-up(sm) {
+                            @include padding-right(0);
+                            border-right: 0;
+                        }
+
+        				a {
+        					color: $white;
+        					font-size: 13px;
+        					letter-spacing: 0.8px;
+
+        					&:hover {
+        						color: $white;
+        						text-decoration: none;
+        						border-bottom: 1px dotted $white;
+        					}
+        				}
+
+        				&:last-child {
+                            @include padding-right(0);
+        					@include margin-right(0);
+                            border-right: 0;
+        				}
+        			}
+        		}
+        	}
+
+        	.copyright {
+                color: $white;
+        		font-size: 13px;
+        		letter-spacing: 0.8px;
+        		margin: 0;
+        		@include media-up(sm) {
+        			@include float(right);
+        		}
+        	}
+        }
+    }
+}
+
+.wrapper-footer footer#footer-openedx a,
+.wrapper-footer footer#footer-openedx .copyright,
+.wrapper-footer footer#footer-openedx .colophon .nav-colophon li a {
+	color: $white;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

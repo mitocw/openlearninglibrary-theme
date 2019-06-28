@@ -1,0 +1,80 @@
+html,
+body {
+    height: 100%;
+    overflow: auto;
+
+    // Sticky footer rules
+    .window-wrap {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+
+        .content-wrapper {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+html {
+    overflow: auto !important;
+}
+
+body {
+    background: $body-bg;
+    color: $charcoal-gray;
+    font-family: $font-family-sans-serif;
+}
+
+#main,
+.container,
+.course-tabs,
+body.view-in-course .container,
+body.view-in-course .content-wrapper,
+.wrapper-preview-menu .preview-menu,
+.content-wrapper .page-content-container {
+    @include margin-left(auto);
+    @include margin-right(auto);
+    @include padding-left( ($baseline*0.75) );
+    @include padding-right( ($baseline*0.75) );
+    max-width: $container-default;
+}
+
+#main {
+    position: relative;
+    z-index: 3;
+
+    .view-profile & {
+        max-width: inherit;
+        padding: 0;
+    }
+}
+
+.content-wrapper {
+
+    .container {
+        @include padding($baseline*3, $baseline*0.75, $baseline*5, $baseline*0.75);
+
+        .view-progress & {
+            padding: 0;
+        }
+    }
+}
+
+.course-info .container .wrap-instructor-info.studio-view {
+    @include clearfix;
+    @include margin(0, 0, $baseline*0.5, 0);
+}
+
+.find-courses, .university-profile {
+    background: $body-bg;
+}
+
+a {
+    color: $secondary;
+
+    &:hover {
+        color: $primary;
+    }
+}
