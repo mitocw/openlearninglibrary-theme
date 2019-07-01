@@ -39,6 +39,7 @@ $pattern-library-path: '../../edx-pattern-library' !default;
 @import 'course/course-details';
 @import 'course/course-sidebar';
 @import 'course/layout/courseware_preview';
+@import 'course/layout/course-instructor-tab';
 
 // multicourse
 @import 'multicourse/dashboard';

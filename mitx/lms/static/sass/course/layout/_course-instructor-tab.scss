@@ -1,0 +1,127 @@
+.instructor-dashboard-wrapper-2 {
+
+    .instructor-dashboard-content-2 {
+
+        .instructor-nav {
+
+            .nav-item {
+
+                .btn-link {
+
+                    &:focus {
+                        outline: none;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .idash-section {
+            border: 1px solid red;
+
+            h3 {
+                margin-bottom: $baseline;
+            }
+
+            select {
+                @include media-up(sm) {
+                    min-width: 200px;
+                    height: 34px;
+                }
+            }
+
+            input[type="button"] {
+                background: $white;
+                border-color: $primary;
+                color: $primary;
+                box-shadow: none;
+                font-family: $font-roboto !important;
+                font-weight: 500 !important;
+                letter-spacing: 0.5px !important;
+                text-shadow: none;
+
+                &:hover {
+                    background: $primary;
+                    border-color: $primary;
+                    color: $white;
+                }
+
+                &:active,
+                &:focus {
+                    outline: none;
+                    box-shadow: none !important;
+                }
+            }
+
+            &#course_info {
+
+                .enrollment-wrapper {
+
+                    table {
+                        @include media-up(sm) {
+                            min-width: 400px;
+                        }
+
+                        caption {
+                            border-bottom: 1px solid $light-blue-gray;
+                            padding: $baseline*0.5 0;
+                            @include text-align(left);
+                        }
+
+                        tr {
+
+                            th,
+                            td {
+                                padding: $baseline*0.5 0;
+                            }
+
+                            th {
+                                font-weight: 600;
+                            }
+
+                            td {
+
+                            }
+
+                            &:nth-child(odd) {
+
+                            }
+
+                            &:last-child {
+                                border-top: 1px solid $bluey-gray !important;
+                                border-bottom: 1px solid $bluey-gray !important;
+                            }
+                        }
+                    }
+                }
+
+                .basic-wrapper {
+
+                    .list-input {
+
+                        li {
+
+                            label {
+                                display: inline-block;
+                                @include media-up(sm) {
+                                    min-width: 175px;
+                                }
+                            }
+
+                            b {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            fieldset {
+
+                label {
+                    color: $charcoal-gray;
+                }
+            }
+        }
+    }
+}
