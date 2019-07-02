@@ -12,6 +12,7 @@
     }
 
     footer {
+        width: auto !important;
 
         &#footer-openedx {
             max-width: $container-default;
@@ -83,6 +84,8 @@
             }
 
         	.container {
+                background: transparent;
+                width: auto;
                 @include clearfix;
         		@include padding(0, $baseline*0.75, 0, $baseline*0.75);
         	}
