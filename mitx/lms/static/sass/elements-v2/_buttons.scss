@@ -49,8 +49,15 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
 .btn-link {
     color: $primary;
 
+    &:focus {
+        color: $primary;
+        border:none;
+    }
+
     &:hover {
+        border: none;
         color: darken($primary, 5%);
+        text-decoration: none;
     }
 }
 

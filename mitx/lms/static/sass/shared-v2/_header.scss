@@ -81,6 +81,7 @@
                             color: $primary;
                             font-family: $font-roboto;
                             font-weight: 500;
+                            @include ellipsis(150px);
                             @include margin-right($baseline*1.3);
                         }
 

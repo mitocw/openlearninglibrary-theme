@@ -161,8 +161,9 @@
     }
 }
 
-.faq-section {
-    margin-top: $baseline*5;
+#faq-section {
+    margin-top: $baseline*3;
+    padding-top: $baseline*2;
 
     .section-title {
         border-bottom: 2px solid $blue-gray-70;
