@@ -100,7 +100,11 @@ window.onload = function () {
 };
 
 $(document).on('click', function(event) {
-    if(event.target.nodeName == 'A' || event.target.nodeName == 'BUTTON'){
-        periodicCaller();
+    if (event.target.nodeName == 'A' || event.target.nodeName == 'BUTTON') {
+        if (event.target.className.includes('form-toggle')){
+            periodicCaller();
+        } else if(event.target.textContent.includes('Forgot password?')) {
+            periodicCaller();
+        }
     }
 });
