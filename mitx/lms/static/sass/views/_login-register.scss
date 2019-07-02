@@ -53,7 +53,8 @@
             background: $body-bg;
             padding: 0;
             @include media-up(sm) {
-                width: 510px;
+                width: 522px;
+                max-width: 522px;
             }
         }
 
