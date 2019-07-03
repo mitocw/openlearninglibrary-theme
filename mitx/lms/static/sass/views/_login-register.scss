@@ -25,6 +25,15 @@
     }
 }
 
+.view-passwordreset {
+
+    #password-reset-complete-container {
+        background: transparent;
+        position: relative;
+        z-index: 999;
+    }
+}
+
 .login-register-content {
     margin: 0 auto !important;
     background: $body-bg;
