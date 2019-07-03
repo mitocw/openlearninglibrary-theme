@@ -86,3 +86,7 @@ a {
         color: $primary;
     }
 }
+
+.fa:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+}

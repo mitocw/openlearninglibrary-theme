@@ -58,6 +58,24 @@
     }
 }
 
+#banner-msg {
+
+    p {
+        margin: 0;
+    }
+}
+
+.page-banner {
+
+    .alert {
+        border-radius: $border-radius;
+
+        &.alert-warning {
+            padding-top: 4px;
+        }
+    }
+}
+
 // ------------------------------
 // #DEVELOPERS
 // ------------------------------
@@ -75,4 +93,21 @@
 .account-settings-sections .section .account-settings-section-body .u-field .u-field-order .u-field-order-date,
 .account-settings-sections .section .account-settings-section-body .u-field .u-field-order-lines .u-field-order-date {
     width: 30%;
+}
+
+.course-bookmarks .bookmarks-results-list .bookmarks-results-list-item:hover {
+    color: $light-blue-gray;
+    text-decoration: none;
+}
+
+.course-bookmarks .bookmarks-results-list .bookmarks-results-list-item::before {
+    color: $primary;
+}
+
+.course-bookmarks .bookmarks-results-list .bookmarks-results-list-item:hover .list-item-breadcrumbtrail {
+    color: $primary;
+}
+
+.course-bookmarks .search-results .search-count {
+    font-weight: 600;
 }

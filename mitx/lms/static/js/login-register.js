@@ -94,13 +94,20 @@ var updateRegisterTermsOfServiceText = function () {
     });
 };
 
-
 window.onload = function () {
-    periodicCaller();
-};
+    if ($('div').hasClass('login-register')) {
+        periodicCaller();
+    }
+}
 
 $(document).on('click', function(event) {
-    if(event.target.nodeName == 'A' || event.target.nodeName == 'BUTTON'){
-        periodicCaller();
+    if ($('div').hasClass('login-register')) {
+        if(event.target.nodeName == 'A' || event.target.nodeName == 'BUTTON'){
+            if(event.target.className.includes('form-toggle')){
+                periodicCaller();
+            }else if(event.target.textContent.includes('Forgot password?')){
+                periodicCaller();
+            }
+        }
     }
 });

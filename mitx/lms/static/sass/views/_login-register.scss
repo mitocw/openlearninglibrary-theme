@@ -1,6 +1,7 @@
 // =================================
 // lms - views - login/register view
 // =================================
+.view-passwordreset,
 .login-register-view {
 
     .content-wrapper {
@@ -25,22 +26,48 @@
 }
 
 .login-register-content {
-    margin: 0;
+    margin: 0 auto !important;
     background: $body-bg;
     justify-content: left;
+    position: relative;
+    z-index: 100;
 
     .login-register-view & {
         background: $body-bg;
     }
 
+    .status { //notification section like 'invalid password link' etc.
+        margin: 50px auto;
+
+        .login-register-view & {
+            margin-top: 0;
+        }
+
+        main {
+            width: auto !important;
+
+            p {
+                max-width: 100% !important;
+            }
+        }
+    }
+
+    #password-reset-confirm-react,
     #login-and-registration-container {
-        @include margin($baseline*6.25, 0, $baseline*6.25, $baseline*4.25);
+        margin: $baseline*2 auto;
+
         background: $body-bg;
+        @include media-up(sm) {
+            @include margin($baseline*6.25, 0, $baseline*6.25, $baseline*4.25);
+        }
 
         .login-register-view & {
             background: $body-bg;
-            width: 450px;
             padding: 0;
+            @include media-up(sm) {
+                width: 535px;
+                max-width: 535px;
+            }
         }
 
         .form-type {
@@ -54,15 +81,29 @@
                 -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
 
                 h2,
-                .form-title {
+                .form-title,
+                .section-title {
                     color: $charcoal-gray;
                     font-weight: normal;
+                    font-size: 24px;
                     letter-spacing: 0.28px;
-                }
-
-                .form-title {
-                    font-size: 32px;
+                    @include text-align(left);
                     @include margin(0, 0, $baseline*1.5, 0);
+                    @include media-up(sm) {
+                        font-size: 32px;
+                    }
+
+                    .text {
+                        font-size: 24px;
+                        padding: 0;
+                        @include media-up(sm) {
+                            font-size: 32px;
+                        }
+                    }
+
+                    &:after {
+                        content: none;
+                    }
                 }
 
                 form {
@@ -84,7 +125,7 @@
                             font-weight: normal;
                             color: $blue-gray;
                             left: $baseline*0.75;
-                            right: $baseline*0.15;
+                            right: $baseline*1.25;
                             top: $baseline*0.5;
                             @include transition(all 0.15s);
                             @include padding($baseline*0.15, $baseline*0.25, $baseline*0.15, $baseline*0.25);
@@ -118,11 +159,12 @@
                             }
                         }
 
-                        .input-block:not([type="checkbox"]):not([type="radio"]) {
+                        input[type='password'],
+                        .input-block:not([type="checkbox"]):not([type="radio"]):not([type="textarea"]) {
                             box-shadow: none;
-                            border-radius: $border-radius;
+                            border-radius: $border-radius !important;
                             border-color: $bluey-gray;
-                            height: 46px;
+                            height: 46px !important;
                             padding: ($baseline/4) $baseline;
                             font-family: $font-roboto;
                             font-weight: normal;
@@ -134,12 +176,13 @@
                             &:focus {
                                 border-color: $secondary;
                                 box-shadow: 0 0 0 1px $secondary;
-                                outline: none;
+                                outline: none !important;
                             }
                         }
 
                         textarea {
-                            height: 100px;
+                            border-radius: $border-radius !important;
+                            padding: $baseline*0.75 $baseline !important;
                         }
 
                         .tip {
@@ -279,6 +322,10 @@
                 }
             }
         }
+    }
+
+    #password-reset-confirm-react {
+        @include margin-left(0);
     }
 }
 

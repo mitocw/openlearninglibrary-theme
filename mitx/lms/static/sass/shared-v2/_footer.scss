@@ -12,6 +12,7 @@
     }
 
     footer {
+        width: auto !important;
 
         &#footer-openedx {
             max-width: $container-default;
@@ -83,6 +84,8 @@
             }
 
         	.container {
+                background: transparent;
+                width: auto;
                 @include clearfix;
         		@include padding(0, $baseline*0.75, 0, $baseline*0.75);
         	}
@@ -129,8 +132,10 @@
         	.copyright {
                 color: $white;
         		font-size: 13px;
+                font-family: $font-family-sans-serif;
         		letter-spacing: 0.8px;
         		margin: 0;
+                max-width: 100%;
         		@include media-up(sm) {
         			@include float(right);
         		}
