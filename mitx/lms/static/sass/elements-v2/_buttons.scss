@@ -52,9 +52,11 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
     &:focus {
         color: $primary !important;
         border-color: transparent !important;
+        text-decoration: none !important;
     }
 
     &:disabled {
+        border-color: transparent;
         display: inline-block;
     }
 

@@ -95,8 +95,13 @@
     width: 30%;
 }
 
+.course-bookmarks .bookmarks-results-list .bookmarks-results-list-item {
+    @include transition(all 0.3s);
+}
+
 .course-bookmarks .bookmarks-results-list .bookmarks-results-list-item:hover {
-    color: $light-blue-gray;
+    background: $ice-blue;
+    border-color: $light-blue-gray;
     text-decoration: none;
 }
 
