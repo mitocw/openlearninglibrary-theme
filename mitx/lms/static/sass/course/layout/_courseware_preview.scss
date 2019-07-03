@@ -45,6 +45,7 @@
 .navbar,
 .wiki,
 .progress,
+.courseware,
 .instructor {
     margin-top: $baseline;
     margin-bottom: $baseline*2;
@@ -58,7 +59,7 @@
 
     .navbar-nav,
     .course-tabs {
-        @include margin-left(0);
+        @include margin-left(auto);
 
         .nav-item,
         .tab {

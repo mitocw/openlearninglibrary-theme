@@ -50,14 +50,18 @@ $upgrade-dark-color: darken($upgrade-color, 10%) !default;
     color: $primary;
 
     &:focus {
-        color: $primary;
-        border:none;
+        color: $primary !important;
+        border-color: transparent !important;
+    }
+
+    &:disabled {
+        display: inline-block;
     }
 
     &:hover {
-        border: none;
+        border-color: transparent;
         color: darken($primary, 5%);
-        text-decoration: none;
+        text-decoration: none !important;
     }
 }
 
