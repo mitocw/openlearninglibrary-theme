@@ -42,19 +42,31 @@
         .login-register-view & {
             margin-top: 0;
         }
+
+        main {
+            width: auto !important;
+
+            p {
+                max-width: 100% !important;
+            }
+        }
     }
 
     #password-reset-confirm-react,
     #login-and-registration-container {
-        @include margin($baseline*6.25, 0, $baseline*6.25, $baseline*4.25);
+        margin: $baseline*2 auto;
+
         background: $body-bg;
+        @include media-up(sm) {
+            @include margin($baseline*6.25, 0, $baseline*6.25, $baseline*4.25);
+        }
 
         .login-register-view & {
             background: $body-bg;
             padding: 0;
             @include media-up(sm) {
-                width: 522px;
-                max-width: 522px;
+                width: 535px;
+                max-width: 535px;
             }
         }
 
@@ -73,14 +85,20 @@
                 .section-title {
                     color: $charcoal-gray;
                     font-weight: normal;
-                    font-size: 32px;
+                    font-size: 24px;
                     letter-spacing: 0.28px;
                     @include text-align(left);
                     @include margin(0, 0, $baseline*1.5, 0);
+                    @include media-up(sm) {
+                        font-size: 32px;
+                    }
 
                     .text {
-                        font-size: 32px;
+                        font-size: 24px;
                         padding: 0;
+                        @include media-up(sm) {
+                            font-size: 32px;
+                        }
                     }
 
                     &:after {
