@@ -45,10 +45,10 @@
 .navbar,
 .wiki,
 .progress,
-.courseware,
+.courseware.wrapper-course-material,
 .instructor {
-    margin-top: $baseline;
-    margin-bottom: $baseline*2;
+    max-width: $container-default;
+    @include margin($baseline, auto, 0, auto);
 
     &.course-tabs {
         overflow-x: scroll;
@@ -59,7 +59,7 @@
 
     .navbar-nav,
     .course-tabs {
-        @include margin-left(auto);
+        @include margin-left(0);
 
         .nav-item,
         .tab {
