@@ -2,9 +2,9 @@
  * Different common utility scripts for the site.
 */
 
-window.onload = function () {
-    periodicPageCaller();
-};
+$( window ).load(function() {
+  periodicPageCaller();
+});
 
 let edxTextPattern = new RegExp('edx', 'gi');
 
