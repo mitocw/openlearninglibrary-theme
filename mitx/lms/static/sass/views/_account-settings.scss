@@ -286,3 +286,68 @@
         }
     }
 }
+
+.paragon__modal {
+
+    .paragon__modal-dialog {
+        max-width: 650px;
+
+        .paragon__modal-content {
+            border: none;
+            border-radius: 0
+        }
+
+        .paragon__modal-footer {
+
+            button {
+                color: $white;
+                border-radius: $border-radius !important;
+                height: 44px;
+                color: rgba($white, 0.8) !important;
+                padding: $baseline*0.25 $baseline !important;
+            }
+
+            button:not([disabled]) {
+                background-color: $primary !important;
+                border-color: $primary  !important;
+                border-radius: $border-radius !important;
+                box-shadow: none;
+                color: $white !important;
+                font-size: 14px;
+                font-family: $font-roboto !important;
+                font-weight: 500 !important;
+                height: 44px;
+                letter-spacing: 0.5px !important;
+                text-shadow: none;
+
+                &:active,
+                &:focus {
+                    outline: none;
+                    box-shadow: none !important;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    border-color: $primary;
+                    color: $primary;
+                }
+
+                &.paragon__btn-outline-primary {
+                    background: $white !important;
+                    border-color: $primary !important;
+                    color: $primary !important;
+
+                    &:hover {
+                        background: $primary !important;
+                        border-color: $primary !important;
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
