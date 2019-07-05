@@ -145,3 +145,56 @@
         }
     }
 }
+
+.modal {
+
+    .inner-wrapper {
+
+        .close-modal {
+
+            &:hover {
+                color: $primary;
+            }
+
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+        header {
+
+            h2 {
+                font-family: $font-family-sans-serif;
+            }
+        }
+
+        form {
+
+            .submit {
+
+                input[type="submit"] {
+                    background: $primary;
+                    box-shadow: none;
+                    border-color: $primary;
+                    color: $white;
+                    text-shadow: none;
+
+                    &:hover {
+                        background: darken($primary, 5%);
+                        border-color: darken($primary, 5%);
+                        color: $white;
+                    }
+
+                    &:active,
+                    &:focus {
+                        background: darken($primary, 5%);
+                        border-color: darken($primary, 5%);
+                        box-shadow: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
