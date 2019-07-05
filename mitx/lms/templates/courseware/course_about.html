@@ -292,15 +292,13 @@ from six import string_types, text_type
             </li>
           %endif
 
-          % if course.end and not course.start_date_is_still_default:
+          % if course.end and course.start:
             <li class="important-dates-item visible-imp">
                 <span class="icon icon-clock" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Length:")}</p>
                 <%
-                    course_start_date = course.advertised_start or course.start
-                    course_end_date = course.end
-                    old_date = course_start_date.date()
-                    new_date = course_end_date.date()
+                    old_date = course.start.date()
+                    new_date = course.end.date()
                     date_delta = new_date - old_date
                     course_length = int(math.ceil(date_delta.days/7.0))
                 %>
