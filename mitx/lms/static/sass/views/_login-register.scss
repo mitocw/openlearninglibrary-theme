@@ -27,6 +27,21 @@
 
 .view-passwordreset {
 
+    #password-reset-confirm-container {
+        max-width: $container-default;
+
+        #password-reset-confirm-anchor {
+            max-width: 535px;
+            @include media-up(sm) {
+                @include margin(0, 0, 0, $baseline*4.25);
+            }
+
+            label {
+                display: inline-block;
+            }
+        }
+    }
+
     #password-reset-complete-container {
         background: transparent;
         position: relative;
@@ -64,7 +79,6 @@
     #password-reset-confirm-react,
     #login-and-registration-container {
         margin: $baseline*2 auto;
-
         background: $body-bg;
         @include media-up(sm) {
             @include margin($baseline*6.25, 0, $baseline*6.25, $baseline*4.25);
