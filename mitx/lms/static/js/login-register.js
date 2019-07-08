@@ -78,10 +78,14 @@ var periodicCaller = function () {
             clearInterval(interval);
             postRender();
 
+            // Replace field title "Public Username" to "Username"
+            updatePublicUsernameFieldTitle();
+
             // Update "Terms of Service" text on logistration forms
             updateRegisterTermsOfServiceText();
             $("body a.form-toggle").click(function() {
                 updateRegisterTermsOfServiceText();
+                updatePublicUsernameFieldTitle();
             });
         }
     });
@@ -94,11 +98,15 @@ var updateRegisterTermsOfServiceText = function () {
     });
 };
 
+var updatePublicUsernameFieldTitle = function () {
+    $("body #register .required-fields .text-username label span.label-text").first().text('Username');
+};
+
 window.onload = function () {
     if ($('div').hasClass('login-register')) {
         periodicCaller();
     }
-}
+};
 
 $(document).on('click', function(event) {
     if ($('div').hasClass('login-register')) {
