@@ -166,6 +166,17 @@ from pipeline_mako import render_require_js_path_overrides
     </script>
 % endif
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5145472-41"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5145472-41');
+</script>
+<!-- End Global site tag (gtag.js) - Google Analytics -->
+
 </head>
 
 <body class="${static.dir_rtl()} <%block name='bodyclass'/> lang_${LANGUAGE_CODE}">
