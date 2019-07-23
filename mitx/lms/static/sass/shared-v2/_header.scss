@@ -63,7 +63,7 @@
 
                 .help-link {
                     font-size: 20px;
-                    color: $light-gray-blue;
+                    color: $light-gray;
                     @include media-up(md) {
                         font-size: 18px;
                     }
@@ -288,7 +288,7 @@
         }
 
         &.open {
-            border-color: $light-gray-blue;
+            border-color: $light-gray;
 
             .line {
                 width: 20px;
