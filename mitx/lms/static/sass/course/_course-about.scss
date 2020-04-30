@@ -66,6 +66,8 @@
 
                             a {
                                 display: inline-block;
+                                margin: 0 1rem 1rem 0;
+                                vertical-align: top;
                                 @include clearfix;
 
                                 strong {

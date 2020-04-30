@@ -174,13 +174,13 @@ from six import string_types, text_type
                 price=course_price)}
           </a>
           <div id="register_error"></div>
-        %elif allow_anonymous:
-          %if show_courseware_link:
+        %else:
+          %if allow_anonymous and show_courseware_link:
             <a href="${course_target}">
             <strong>${_("View Course")}</strong>
             </a>
-          %endif
-        %else:
+          % endif
+
           <%
             if ecommerce_checkout:
               reg_href = ecommerce_checkout_link
