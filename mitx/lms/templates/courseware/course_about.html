@@ -130,12 +130,15 @@ from six import string_types, text_type
         %if user.is_authenticated and registered:
           %if show_courseware_link:
             <span class="register disabled">${_("You are enrolled in this course")}</span>
-            <a href="${course_target}">
           %endif
 
           %if show_courseware_link:
-            <strong>${_("View Course")}</strong>
-            </a>
+            <div class="banner-links">
+              <a href="${course_target}">
+                <strong>${_("View Course")}</strong>
+              </a>
+              <span class="tooltip">View the course as an anonymous user. Some content will be unavailable and progress will not be tracked.</span>
+            </div>
           %endif
 
         %elif in_cart:
@@ -176,12 +179,13 @@ from six import string_types, text_type
           <div id="register_error"></div>
         %else:
           %if allow_anonymous and show_courseware_link:
-            <a
-              title="View the course as an anonymous user. Some content will be unavailable and progress will not be tracked."
-              data-toggle='tooltip'
-              href="${course_target}">
-            <strong>${_("View Course")}</strong>
+          <div class="banner-links">
+            <a href="${course_target}">
+              <strong>${_("View Course")}</strong>
             </a>
+            <span class="tooltip">View the course as an anonymous user. Some content will be unavailable and progress will not be tracked.</span>
+          </div>
+
           % endif
 
           <%
@@ -194,14 +198,15 @@ from six import string_types, text_type
             else:
               href_class = "register"
           %>
-          <a
-            href="${reg_href}"
-            class="${href_class}"
-            data-toggle="tooltip"
-            title="Enroll in the course to take advantage of advanced assessments and keep track of course progress."
-          >
-            ${_("Enroll to Get Started")}
-          </a>
+          <div class="banner-links">
+            <a
+              href="${reg_href}"
+              class="${href_class}"
+            >
+              ${_("Enroll to Get Started")}
+            </a>
+            <span class="tooltip">View the course as an anonymous user. Some content will be unavailable and progress will not be tracked.</span>
+          </div>
           <div id="register_error"></div>
         %endif
         </div>

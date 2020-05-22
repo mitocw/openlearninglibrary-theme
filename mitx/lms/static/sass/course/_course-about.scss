@@ -12,6 +12,7 @@
                 box-shadow: none;
                 height: auto;
                 padding: 0;
+                overflow: visible;
 
                 .intro-inner-wrapper {
                     border: none;
@@ -64,21 +65,69 @@
                                 @include padding($baseline*0.25, $baseline*0.25, $baseline*0.3, $baseline*0.25);
                             }
 
-                            a {
+                            .banner-links {
                                 display: inline-block;
                                 margin: 0 1rem 1rem 0;
                                 vertical-align: top;
+                                width: $baseline*12.5;
+                                position: relative;
+
+                                &:hover {
+                                    .tooltip {
+                                        display: block;
+                                    }
+                                }
+
+                                .tooltip {
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 50%;
+                                    width: 200px;
+                                    margin-left: -100px;
+                                    margin-top: 10px;
+                                    font-size: 13px;
+                                    border-radius: 5px;
+                                    padding: 10px;
+                                    background: black;
+                                    color: white;
+                                    display: none;
+                                    z-index: 10;
+
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        bottom: 100%;
+                                        left: 50%;
+                                        margin-left: -4px;
+                                        border: 4px solid black;
+                                        border-width: 0 4px 4px;
+                                        border-color: transparent transparent black;
+                                    }
+                                }
+                            }
+
+                            a {
+                                display: block;
                                 @include clearfix;
+                                max-width: $baseline*12.5;
+
+                                &:focus {
+                                    ~ .tooltip {
+                                        display: block;
+                                    }
+                                }
 
                                 strong {
+                                    width: auto;
+                                    float: none;
                                     @extend %btn;
                                     @include padding($baseline*0.6, $baseline, $baseline*0.55, $baseline);
                                     background: $primary;
                                     border-color: $primary;
                                     box-shadow: none;
                                     text-shadow: none;
-                                    width: $baseline*13;
                                     border-radius: $border-radius;
+                                    display: block;
 
                                     &:hover {
                                         background: darken($primary, 5%);
