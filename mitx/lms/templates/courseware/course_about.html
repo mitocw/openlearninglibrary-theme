@@ -133,12 +133,9 @@ from six import string_types, text_type
           %endif
 
           %if show_courseware_link:
-            <div class="banner-links">
-              <a href="${course_target}">
-                <strong>${_("View Course")}</strong>
-              </a>
-              <span class="tooltip">View the course as an anonymous user. Some content will be unavailable and progress will not be tracked.</span>
-            </div>
+            <a href="${course_target}">
+              <strong>${_("View Course")}</strong>
+            </a>
           %endif
 
         %elif in_cart:
@@ -205,7 +202,7 @@ from six import string_types, text_type
             >
               ${_("Enroll to Get Started")}
             </a>
-            <span class="tooltip">View the course as an anonymous user. Some content will be unavailable and progress will not be tracked.</span>
+            <span class="tooltip">Enroll in the course to take advantage of advanced assessments and keep track of course progress.</span>
           </div>
           <div id="register_error"></div>
         %endif
