@@ -79,6 +79,7 @@ from pipeline_mako import render_require_js_path_overrides
   % endif
   <script type="text/javascript" src="${static.url(jsi18n_path)}"></script>
   <script type="text/javascript" src="${static.url(ie11_fix_path)}"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
 
@@ -221,6 +222,11 @@ from pipeline_mako import render_require_js_path_overrides
   <script type="text/javascript" src="${static.url('js/accordion.js')}" charset="utf-8"></script>
   <script type="text/javascript" src="${static.url('js/smooth-scroll.js')}" charset="utf-8"></script>
   <script type="text/javascript" src="${static.url('js/common-scripts.js')}" charset="utf-8"></script>
+  <script>
+    (function(){
+      $('[data-toggle=tooltip]').tooltip();
+    })();
+  </script>
   <%static:optional_include_mako file="body-extra.html" is_theming_enabled="True" />
 </body>
 </html>
