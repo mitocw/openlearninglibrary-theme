@@ -41,12 +41,14 @@ body.view-in-course .content-wrapper,
 }
 
 #main {
-    position: relative;
-    z-index: 3;
 
     .view-profile & {
         max-width: inherit;
         padding: 0;
+    }
+
+    .staff-modal {
+        margin-left: -40% !important;
     }
 }
 
