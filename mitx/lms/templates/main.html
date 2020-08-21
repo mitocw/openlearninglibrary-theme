@@ -23,6 +23,9 @@ from openedx.core.djangolib.js_utils import dump_js_escaped_json, js_escaped_str
 from openedx.core.release import RELEASE_LINE
 from pipeline_mako import render_require_js_path_overrides
 
+from courseware.courses import get_course_about_section
+from openedx.core.lib.courses import course_image_url
+
 %>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="ie ie9 lte9" lang="${LANGUAGE_CODE}"><![endif]-->
@@ -31,6 +34,15 @@ from pipeline_mako import render_require_js_path_overrides
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    % if course:
+        <meta data-rh="true" property="og:title" content="${course.display_name_with_default}" />
+        <meta data-rh="true" property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
+        <meta data-rh="true" property="title" content="${course.display_name_with_default}" />
+        <meta data-rh="true" property="description" content="${get_course_about_section(request, course, 'short_description')}" />
+        <meta data-rh="true" property="image" content="${request.build_absolute_uri(course_image_url(course))}" />
+    % endif
+
 
 ## Define a couple of helper functions to make life easier when
 ## embedding theme conditionals into templates. All inheriting
