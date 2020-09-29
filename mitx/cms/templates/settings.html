@@ -6,7 +6,7 @@
 
 <%namespace name='static' file='static_content.html'/>
 <%!
-  import urllib
+  from urllib.parse import quote
   from django.utils.translation import ugettext as _
   from contentstore import utils
   from openedx.core.djangoapps.certificates.api import can_show_certificate_available_date_field
@@ -42,7 +42,8 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
         SettingsFactory(
             "${details_url | n, js_escaped_string}",
             ${show_min_grade_warning | n, dump_js_escaped_json},
-            ${can_show_certificate_available_date_field(context_course) | n, dump_js_escaped_json}
+            ${can_show_certificate_available_date_field(context_course) | n, dump_js_escaped_json},
+            "${upgrade_deadline | n, js_escaped_string}"
         );
     });
 </%block>
@@ -100,10 +101,10 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
             <ul class="list-actions">
               <li class="action-item">
                 <%
-                  email_subject = urllib.quote(_("Enroll in {course_display_name}").format(
+                  email_subject = quote(_("Enroll in {course_display_name}").format(
                       course_display_name = context_course.display_name_with_default
                   ).encode("utf-8"))
-                  email_body = urllib.quote(_('The course "{course_display_name}", provided by {platform_name}, is open for enrollment. Please navigate to this course at {link_for_about_page} to enroll.').format(
+                  email_body = quote(_('The course "{course_display_name}", provided by {platform_name}, is open for enrollment. Please navigate to this course at {link_for_about_page} to enroll.').format(
                       course_display_name = context_course.display_name_with_default,
                       platform_name = settings.PLATFORM_NAME,
                       link_for_about_page = link_for_about_page
@@ -206,9 +207,9 @@ CMS.URL.UPLOAD_ASSET = '${upload_asset_url | n, js_escaped_string}'
             </ol>
           </fieldset>
         </div>
-        
+
         <hr class="divide" />
-        
+
         <div id="schedule" class="group-settings schedule">
           <header>
             <h2 class="title-2">${_('Course Schedule')}</h2>

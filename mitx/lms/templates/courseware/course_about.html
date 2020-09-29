@@ -1,17 +1,17 @@
 <%page expression_filter="h" />
 <%namespace name='static' file='../static_content.html'/>
 <%!
-import math
-from datetime import datetime, timedelta
+from math import ceil
 from django.utils.translation import ugettext as _
 from django.utils.translation import pgettext
 from django.urls import reverse
-from courseware.courses import get_course_about_section
+from lms.djangoapps.courseware.courses import get_course_about_section
+from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
 from django.conf import settings
 from six import text_type
-from edxmako.shortcuts import marketing_link
 from opaque_keys.edx.keys import CourseKey
-from openedx.core.djangoapps.content.course_overviews.models import CourseOverview
+from edxmako.shortcuts import marketing_link
+from openedx.core.djangolib.js_utils import js_escaped_string
 from openedx.core.djangolib.markup import HTML, Text
 from openedx.core.lib.courses import course_image_url
 from six import string_types, text_type
@@ -84,9 +84,9 @@ from six import string_types, text_type
     %else:
 
     $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
-      if(xhr.status == 200) {
+      if (xhr.status == 200) {
         if (xhr.responseText == "") {
-          location.href = "${reverse('dashboard') | n, decode.utf8}";
+          location.href = "${reverse('dashboard') | n, js_escaped_string}";
         }
         else {
           location.href = xhr.responseText;
@@ -95,12 +95,11 @@ from six import string_types, text_type
           location.href = "${reverse('register_user') | n, decode.utf8  }?course_id=${course.id | n, decode.utf8 }&enrollment_action=enroll";
       } else {
         $('#register_error').text(
-            (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.") | n, decode.utf8}")
+            (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.") | n, js_escaped_string}")
         ).css("display", "block");
       }
     });
-
-    %endif
+     %endif
 
   })(this)
   </script>
@@ -305,10 +304,10 @@ from six import string_types, text_type
                 <span class="icon icon-clock" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Length:")}</p>
                 <%
-                    old_date = course.start.date()
-                    new_date = course.end.date()
+                    old_date = course.start
+                    new_date = course.end
                     date_delta = new_date - old_date
-                    course_length = int(math.ceil(date_delta.days/7.0))
+                    course_length = int(ceil(date_delta.days/7.0))
                 %>
                 % if course_length > 1:
                     <%
