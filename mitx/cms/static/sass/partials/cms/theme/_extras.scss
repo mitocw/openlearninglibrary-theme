@@ -12,7 +12,23 @@
         &.has-navigation {
 
             .nav-actions {
-                top: 0;
+
+                .view-library & {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.maintenance-content {
+
+    .maintenance-form {
+
+        .form-create {
+
+            .actions {
+                margin-top: 0;
             }
         }
     }
