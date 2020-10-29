@@ -73,6 +73,45 @@
         &.alert-warning {
             padding-top: 4px;
         }
+
+        .icon-alert {
+            align-self: center;
+        }
+    }
+    .user-messages-ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+
+            .alert.alert-warning .message-content .enroll-btn.btn-link {
+                color: $primary;
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.xmodule_display {
+
+    &.xmodule_SequenceModule {
+
+        .sequence-nav {
+
+            ol {
+
+                li {
+
+                    button {
+
+                        &:focus{
+                            outline: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
