@@ -115,6 +115,31 @@
                 }
             }
 
+            &#membership {
+
+                .member-lists-management {
+
+                    .wrapper-member-select {
+                        background: $gray-lightest;
+                        border: 1px solid $light-gray;
+                        margin-bottom: -1px;
+                    }
+
+                    .auth-list-container {
+
+                        .member-list-widget {
+
+                            .member-list {
+
+                                thead {
+                                    background: $gray-lightest;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             fieldset {
 
                 label {
