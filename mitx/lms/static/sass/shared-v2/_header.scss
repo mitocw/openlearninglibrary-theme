@@ -462,3 +462,14 @@
         }
     }
 }
+
+.give-btn {
+    a {
+        color: $rouge !important;
+        text-decoration: none !important;
+        &:hover {
+            color: $rouge !important;
+            text-decoration: none !important;
+        }
+    }
+}
