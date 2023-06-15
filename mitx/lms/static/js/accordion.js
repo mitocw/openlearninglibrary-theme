@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     if(window.location.href.includes("why_support_mit_faq")){
         $("#why_support_mit_faq .accordion-title").addClass("active");
-        $("#why_support_mit_faq .accordion-content").css("display", "block");
+        $("#why_support_mit_faq .accordion-content").slideDown(400, "swing");
     }
 
 });
