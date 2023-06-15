@@ -14,12 +14,9 @@ $(document).ready(function() {
         $('.accordion-content').slideUp(400, "swing");
     });
 
-    $('#why_support_mit_footer').click(function() {
-        $('html, body').animate({
-            scrollTop: $("#support_mit_faq_title").offset().top
-        }, 500).promise().then(function() {
-            $("#support_mit_faq_title").trigger("click");
-        });
-    });
+    if(window.location.href.includes("why_support_mit_faq")){
+        $("#why_support_mit_faq .accordion-title").addClass("active");
+        $("#why_support_mit_faq .accordion-content").css("display", "block");
+    }
 
 });
