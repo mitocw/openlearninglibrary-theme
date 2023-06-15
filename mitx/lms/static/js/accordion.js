@@ -17,7 +17,7 @@ $(document).ready(function() {
     $('#why_support_mit_footer').click(function() {
         $('html, body').animate({
             scrollTop: $("#support_mit_faq_title").offset().top
-        }, 1000).promise().then(function() {
+        }, 500).promise().then(function() {
             $("#support_mit_faq_title").trigger("click");
         });
     });
