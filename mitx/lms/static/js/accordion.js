@@ -13,4 +13,13 @@ $(document).ready(function() {
     	$('.accordion-title').removeClass('active');
         $('.accordion-content').slideUp(400, "swing");
     });
+
+    $('#why_support_mit_footer').click(function() {
+        $('html, body').animate({
+            scrollTop: $("#support_mit_faq_title").offset().top
+        }, 1000).promise().then(function() {
+            $("#support_mit_faq_title").trigger("click");
+        });
+    });
+
 });
