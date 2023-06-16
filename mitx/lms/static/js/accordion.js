@@ -13,4 +13,10 @@ $(document).ready(function() {
     	$('.accordion-title').removeClass('active');
         $('.accordion-content').slideUp(400, "swing");
     });
+
+    if(window.location.href.includes("why_support_mit_faq")){
+        $("#why_support_mit_faq .accordion-title").addClass("active");
+        $("#why_support_mit_faq .accordion-content").slideDown(400, "swing");
+    }
+
 });
