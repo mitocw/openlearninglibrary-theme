@@ -16,7 +16,7 @@
 
         .is-authenticated & {
             @include media-up(md) {
-                @include padding($baseline*0.65, 0, $baseline*0.65, 0);
+                @include padding($baseline*0.65, $baseline*0.7, $baseline*0.65, $baseline*0.7);
             }
         }
 
