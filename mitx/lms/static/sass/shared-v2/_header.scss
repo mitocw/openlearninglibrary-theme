@@ -23,10 +23,10 @@
 
         .main {
             @include media-up(md) {
-                @include margin(0, 0, 0, $baseline);
+                @include margin(0, 0, 0, $baseline * 0.4);
             }
             @include media-up(xl) {
-                @include margin(0, 0, 0, $baseline*2.5);
+                @include margin(0, 0, 0, $baseline);
             }
 
             .nav-item {
@@ -306,9 +306,9 @@
         margin: 0;
         @include text-align(left);
         @include media-up(sm) {
-            min-width: 300px;
         }
         @include media-up(md) {
+            min-width: 200px;
             display: table;
         }
 
