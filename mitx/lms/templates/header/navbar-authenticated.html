@@ -73,12 +73,6 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
         <a class="tab-nav-link" href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
       </div>
     % endif
-    <div class="mobile-nav-item nav-item mobile-pad-item give-btn nav-tab">
-      <a href="https://giving.mit.edu/give/to?fundId=3894990" target="_blank">
-        <img width="30px" height="30px" src="${static.url('images/heart.png')}"/>
-        ${_("Give")}
-      </a>
-    </div>
   </div>
   <div class="secondary">
     % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
