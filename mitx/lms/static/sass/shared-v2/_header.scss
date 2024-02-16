@@ -2,21 +2,22 @@
     box-shadow: none;
     position: relative;
     z-index: 100;
-    padding: 0px;
     border-bottom-color: $light-blue-gray;
+    @include padding(($baseline*0.5), 0, ($baseline*0.5), 0);
     @include media-up(sm) {
         overflow: visible;
+        @include padding(($baseline*0.75), 0, ($baseline*0.75), 0);
     }
 
     .nav-links {
         @include media-up(md) {
-            width: 100%;
-            padding: $baseline*0.75;
+            width: 80%;
+            @include padding($baseline*0.75, 0, $baseline*0.75, 0);
         }
 
         .is-authenticated & {
             @include media-up(md) {
-                @include padding($baseline*0.65, $baseline*0.7, $baseline*0.65, $baseline*0.7);
+                @include padding($baseline*0.65, 0, $baseline*0.65, 0);
             }
         }
 
@@ -233,6 +234,8 @@
 .main-header {
     @include clearfix;
     @include padding(0, ($baseline*0.75), 0, ($baseline*0.75));
+    margin: auto;
+    max-width: $container-default;
     @include media-down(md) {
         height: auto !important;
     }
@@ -302,13 +305,11 @@
         display: block;
         margin: 0;
         @include text-align(left);
-        padding-right: 15px;
+        @include media-up(sm) {
+            min-width: 300px;
+        }
         @include media-up(md) {
             display: table;
-            border-right: 3px solid lightgray;
-            min-width: 300px;
-            padding-top: 20px;
-            padding-bottom: 20px;
         }
 
         > * {
@@ -324,7 +325,6 @@
             float: none;
             margin: 0;
             padding-top: 8px;
-            height: auto;
             @include media-up(sm) {
                 padding-top: 5px;
             }
@@ -345,48 +345,6 @@
             margin: 0;
             @include text-align(left);
             @include padding-left($baseline);
-        }
-    }
-
-    .branding-logo {
-        display: block;
-        margin: 0;
-        @include text-align(left);
-        @include media-up(md) {
-            display: table;
-            border-left: 3px solid lightgray;
-            padding-left: 15px;
-            @include text-align(right);
-        }
-
-        > * {
-            @include media-up(md) {
-                display: table-cell !important;
-                float: none !important;
-                vertical-align: middle;
-            }
-        }
-
-        a {
-            display: inline-block;
-            float: none;
-            margin: 0;
-            padding-top: 8px;
-            @include media-up(sm) {
-                padding-top: 5px;
-            }
-            @include media-up(md) {
-                padding-top: 0;
-            }
-
-            .branding_logo {
-                margin: 0;
-                height: ($baseline*1.4);
-                max-width: 100px;
-                @include media-up(sm) {
-                    height: auto;
-                }
-            }
         }
     }
 }
